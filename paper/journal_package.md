@@ -25,6 +25,18 @@ note: all data are synthetic. the abstract does not claim generalization to real
 
 abstract selection note: the 250 word limit excludes two negative results that remain mandatory in the manuscript: the forecast hypothesis h5 is refuted (the apparent decline in chaos accuracy has a confidence interval that includes zero, p=0.172, and within patient r2 is negative; reconcile the table discrepancy listed in section 10) and the g4 control is inconclusive (rf 0.025 on the primary seed, 0.0075 on the second seed, patient level p_holm 0.087 over five models). do not drop them from the results section or from the cover letter discussion.
 
+## 2b. научный руководитель
+
+placeholder: угланова наталья николаевна, канд. мед. наук, доцент, кафедра психологии и педагогики, ивановский государственный медицинский университет (ранее ивгма). подтвердить у руководителя актуальную должность, написание имени и готовность упоминания перед подачей.
+
+её работы процитированы в рукописи, позиции цитирования честные:
+
+- угланова и др. (2010), вестник рудн, серия медицина, № 4: введение, поведение пациента в информационной среде; обсуждение, цифровая гигиена.
+- угланова, мушников, поляков (2020), вестник ивгма, т. 25, № 3-4: введение, цифровые источники медицинской информации.
+- мушников и др. (2009), вестник рудн, серия медицина, № 3, с. 73: обсуждение, организационный слой рекомендаций.
+
+открытые данные первоисточников: точные страницы статьи 2010 и конечная страница статьи 2009 не подтверждены, уточнить по pdf на journals.rudn.ru. статья 2020 в vestnik-ivgma.ru/issues/71/publications/1261.
+
 ## 3. authors and affiliations, placeholders
 
 the current project attribution is "eidolon project contributors" (`NOTICE`, `CITATION.cff`). this is a collective label, not a person. journals require named individuals who can approve the submission and take accountability, so the collective label cannot serve as the author list. the table below is a layout placeholder; add or remove rows to match the final author list.

@@ -131,3 +131,11 @@ do not claim: that the generator is biologically realistic; that the negative re
 - shannon 1948, mandelbrot 1982 and taleb 2007 are conceptual or historical sources in the current preprint. they are outside the six clusters and are not counted. no DOI is asserted for them here.
 - additional `refs/` items are not imported: backes et al. 2012, no complete citation in `refs/` and no match in an openalex title search in this pass; donoho 2000, no complete citation in `refs/`; varian 2004, kerr 2001, heisenberg 1927, pentland 2014 and prokopenko 2014, outside the six clusters or no DOI asserted. no claim is made about their existence or quality.
 - the preprint's `paper/references.bib` contains 11 entries. six are in the 20-item core: `narayanan2008`, `dwork2006`, `sweeney2002`, `eckersley2010`, `monrose1997` and `shumailov2023`. `kohno2005` is verified and retained in the preprint. shannon 1948, mandelbrot 1982, taleb 2007 and `proteus2026` are outside the core for the reasons above.
+
+## дополнение 2026-10-30: ивановская школа, поведение пациентов в информационной среде
+
+- угланова н.н., мушников д.л., костин в.в., кизеев м.в., стволыгин а.в., наумов а.в. (2010). информационная культура пациентов и пути ее повышения. вестник рудн, серия медицина, № 4. 982 пациента в иваново, пять компонентов информационной культуры (этико-правовой, профилактический, ургентный, социальный, культура использования источников), связь с результативностью помощи. источник: journals.rudn.ru/medicine/article/view/2800, также cyberleninka.
+- угланова н.н., мушников д.л., поляков б.а. (2020). информированность студентов медицинского вуза по вопросам профилактики новой коронавирусной инфекции. вестник ивгма, т. 25, № 3-4. 350 студентов, 78% узнали из соцсетей. источник: vestnik-ivgma.ru/issues/71/publications/1261.
+- мушников д.л., поляков б.а., куканова н.н., краснова с.а., угланова н.н., сибирева и.и. (2009). медико-организационные технологии работы с пациентами. вестник рудн, серия медицина, № 3, начало с. 73. источник: journals.rudn.ru/medicine/article/view/2433.
+
+позиции для цитирования: введение (поведение пациента в информационной среде), обсуждение 5.5 (цифровая гигиена через организационные механизмы). не цитировать в методах и результатах. точные страницы 2010 и конечная страница 2009 требуют уточнения по pdf.
