@@ -82,7 +82,7 @@ analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv
 
 release: manifest
 	mkdir -p release
-	tar --exclude='./release' --exclude='./refs' --exclude='./.git' \
+	tar --exclude='./release' --exclude='./refs' --exclude='./.git' --exclude='./_internal' \
 		--exclude='__pycache__' --exclude='*.o' --exclude='./eidolon_gen' \
 		--exclude='./seed.stamp' \
 		-czf release/eidolon-v$(VERSION).tar.gz .

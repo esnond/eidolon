@@ -1,0 +1,17 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: build
+        run: make
+      - name: sanitizer test
+        run: make test
+      - name: determinism and isolation
+        run: make check
+      - name: python tests
+        run: make test-python

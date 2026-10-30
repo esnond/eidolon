@@ -8,3 +8,5 @@ data/seed2/*.csv
 release/*.tar.gz
 refs/
 tmp_check/
+_internal/
+tmp_check/
