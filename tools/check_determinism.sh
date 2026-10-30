@@ -4,6 +4,7 @@ BIN=${1:-./eidolon_gen}
 SEED=${2:-20261030}
 AGAINST=${3:-}
 TMP=$(mktemp -d)
+: "${TMPDIR:=/tmp}"
 trap 'rm -rf "$TMP"' EXIT
 "$BIN" --seed "$SEED" --out "$TMP/run1.csv"
 "$BIN" --seed "$SEED" --out "$TMP/run2.csv"

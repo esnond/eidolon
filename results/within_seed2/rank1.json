@@ -1,0 +1,20 @@
+{
+  "1": {
+    "participation_ratio": 10.49606144291122,
+    "lambda1_share": 0.19691586846807482,
+    "n_windows": 1800,
+    "n_features": 51
+  },
+  "6": {
+    "participation_ratio": 1.4754627191508123,
+    "lambda1_share": 0.8092105165679941,
+    "n_windows": 1800,
+    "n_features": 51
+  },
+  "7": {
+    "participation_ratio": 10.085124746378382,
+    "lambda1_share": 0.20972845672232757,
+    "n_windows": 1800,
+    "n_features": 51
+  }
+}

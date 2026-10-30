@@ -25,6 +25,7 @@ analysis_completed: 2026-10-30T18:45:00Z
 | d16 | h2 по среднему четырёх моделей | per-model patient-level тесты и matched 150-class sensitivity | correction | среднее скрывает противоположные знаки: logreg/MLP g2>g3, hgb g3>g2, rf tie |
 | d17 | collision ceiling 0.0967 | profile fraction 0.0967, plurality ceiling 0.3867 | correction | 0.0967 это оконная доля, а не потолок top1; rf/hgb top1 равен 0.3867 |
 | d18 | четыре группы | within-subject g6/g7: 200 natural, 200 deterministic switch, 200 stochastic switch | exploratory | причинная проверка на одном пациенте, дни 1-45 natural, 46-90 mask |
+| d19 | closed-set top1 | open-set verification, post-only и pre-only контроли, mask detectability, effective classes | extension | reviewer gate: closed-set не отвечает на вопрос известный/новый; post-only отделяет перенос от уничтожения идентичности |
 
 ## post hoc анализы
 
@@ -40,8 +41,7 @@ analysis_completed: 2026-10-30T18:45:00Z
 ## что не делалось
 
 - не запускался полный permutation null для g4 rf.
-- не строился стохастический вариант g3.
-- не проводился within-subject эксперимент с переключением естественного поведения в маскировку.
+- стохастический вариант g3 построен в v1.1.0 как g5; within-subject переключение построено в v1.2.0 как g6/g7; см d15 и d18.
 - не выполнялась настройка hgb; модель оставлена как зарегистрированный слабый классификатор.
 - не использовался pytorch.
 - не проверялась воспроизводимость на другой машине; только локальный bitwise replay.

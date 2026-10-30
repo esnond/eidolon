@@ -46,16 +46,19 @@ test: sanitize
 	LD_PRELOAD= /tmp/eidolon_gen_san --seed 7 --out /tmp/eidolon_test/san.csv \
 		--days 5 --n1 2 --n2 2 --n3 2 --n4 2
 	test -s /tmp/eidolon_test/san.csv
+	LD_PRELOAD= /tmp/eidolon_gen_san --seed 7 --out /tmp/eidolon_test/san67.csv \
+		--days 90 --n1 2 --n2 0 --n3 0 --n4 0 --n5 2 --n6 2 --n7 2
+	test -s /tmp/eidolon_test/san67.csv
 
 test-python:
 	$(PY) -m unittest discover -s tests -v
 
-check: $(BIN)
-	sh tools/check_determinism.sh ./$(BIN) $(SEED) --against-published
-	sh tools/check_g5.sh ./$(BIN) $(SEED)
+check: $(BIN) | tmpdir
+	TMPDIR=$(CURDIR)/tmp_check sh tools/check_determinism.sh ./$(BIN) $(SEED) --against-published
+	TMPDIR=$(CURDIR)/tmp_check sh tools/check_g5.sh ./$(BIN) $(SEED)
 
 manifest: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv check
-	sh tools/generate_manifest.sh $(SEED)
+	TMPDIR=$(CURDIR)/tmp_check sh tools/generate_manifest.sh $(SEED)
 
 analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv
 	$(PY) python/eidolon_features.py --csv data/cohort.csv --out-dir results
@@ -72,6 +75,9 @@ analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv
 	$(PY) python/eidolon_plots.py
 	$(PY) python/eidolon_g5_plot.py
 	$(PY) python/eidolon_within_plot.py
+	$(PY) python/eidolon_postonly.py
+	$(PY) python/eidolon_verification.py
+	$(PY) python/eidolon_robustness2.py
 	sh tools/generate_manifest.sh $(SEED)
 
 release: manifest
@@ -85,5 +91,8 @@ release: manifest
 clean:
 	rm -f $(OBJ) $(BIN)
 
+tmpdir:
+	mkdir -p tmp_check
+
 FORCE:
-.PHONY: all clean test test-python sanitize check manifest analysis release FORCE
+.PHONY: all clean test test-python sanitize check manifest analysis release tmpdir FORCE

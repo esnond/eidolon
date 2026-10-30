@@ -1,0 +1,116 @@
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+{
+  "groups": {
+    "1": {
+      "logreg": {
+        "accuracy": 0.7475,
+        "ci95": [
+          0.7125,
+          0.7825
+        ],
+        "top5": 0.95,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      },
+      "rf": {
+        "accuracy": 0.75625,
+        "ci95": [
+          0.71875,
+          0.79375
+        ],
+        "top5": 0.955,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      }
+    },
+    "6": {
+      "logreg": {
+        "accuracy": 0.005,
+        "ci95": [
+          0.0,
+          0.015
+        ],
+        "top5": 0.02,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      },
+      "rf": {
+        "accuracy": 0.005,
+        "ci95": [
+          0.0,
+          0.015
+        ],
+        "top5": 0.02,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      }
+    },
+    "7": {
+      "logreg": {
+        "accuracy": 0.00625,
+        "ci95": [
+          0.00125,
+          0.01125
+        ],
+        "top5": 0.0325,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      },
+      "rf": {
+        "accuracy": 0.0025,
+        "ci95": [
+          0.0,
+          0.00625
+        ],
+        "top5": 0.03,
+        "chance": 0.005,
+        "n_train": 800,
+        "n_test": 800
+      }
+    }
+  },
+  "drift": {
+    "1": {
+      "mean": 2.227836951318151,
+      "sd": 0.5224547508339442,
+      "n": 200,
+      "ci95": [
+        2.1572383612570087,
+        2.300633355448467
+      ]
+    },
+    "6": {
+      "mean": 18.370929983097007,
+      "sd": 0.9773151325045846,
+      "n": 200,
+      "ci95": [
+        18.23954454948303,
+        18.509562328467418
+      ]
+    },
+    "7": {
+      "mean": 4.022040003578858,
+      "sd": 0.8756681097039359,
+      "n": 200,
+      "ci95": [
+        3.9023830185222574,
+        4.13977017494727
+      ]
+    }
+  },
+  "n_patients": {
+    "1": 200,
+    "6": 200,
+    "7": 200
+  }
+}

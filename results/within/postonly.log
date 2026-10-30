@@ -1,0 +1,423 @@
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+{
+  "post_only": {
+    "1": {
+      "logreg": {
+        "accuracy": 0.57,
+        "ci95": [
+          0.52,
+          0.6225
+        ],
+        "top5": 0.8125,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 157,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.4625,
+        "ci95": [
+          0.41,
+          0.52
+        ],
+        "top5": 0.765,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 131,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.3475,
+        "ci95": [
+          0.2975,
+          0.3975
+        ],
+        "top5": 0.6075,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 107,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.055,
+        "ci95": [
+          0.0325,
+          0.0775
+        ],
+        "top5": 0.2125,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 21,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    },
+    "6": {
+      "logreg": {
+        "accuracy": 0.0825,
+        "ci95": [
+          0.045,
+          0.1225
+        ],
+        "top5": 0.335,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 17,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.085,
+        "ci95": [
+          0.05,
+          0.1275
+        ],
+        "top5": 0.34,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 18,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.0125,
+        "ci95": [
+          0.0,
+          0.03
+        ],
+        "top5": 0.0475,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 3,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.085,
+        "ci95": [
+          0.045,
+          0.125
+        ],
+        "top5": 0.34,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 17,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    },
+    "7": {
+      "logreg": {
+        "accuracy": 0.005,
+        "ci95": [
+          0.0,
+          0.0125
+        ],
+        "top5": 0.055,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 2,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.02,
+        "ci95": [
+          0.0075,
+          0.035
+        ],
+        "top5": 0.0725,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 8,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.01,
+        "ci95": [
+          0.0025,
+          0.02
+        ],
+        "top5": 0.0625,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 4,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.015,
+        "ci95": [
+          0.005,
+          0.0275
+        ],
+        "top5": 0.0475,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 6,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    }
+  },
+  "pre_only": {
+    "1": {
+      "logreg": {
+        "accuracy": 0.6,
+        "ci95": [
+          0.55,
+          0.65
+        ],
+        "top5": 0.86,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 164,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.5,
+        "ci95": [
+          0.4475,
+          0.55
+        ],
+        "top5": 0.7975,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 144,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.3525,
+        "ci95": [
+          0.3,
+          0.40506249999999966
+        ],
+        "top5": 0.5925,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 106,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.065,
+        "ci95": [
+          0.04,
+          0.0925
+        ],
+        "top5": 0.215,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 24,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    },
+    "6": {
+      "logreg": {
+        "accuracy": 0.5425,
+        "ci95": [
+          0.49,
+          0.5975
+        ],
+        "top5": 0.785,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 151,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.4775,
+        "ci95": [
+          0.425,
+          0.53
+        ],
+        "top5": 0.7375,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 137,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.3025,
+        "ci95": [
+          0.255,
+          0.355
+        ],
+        "top5": 0.5425,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 94,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.03,
+        "ci95": [
+          0.015,
+          0.0475
+        ],
+        "top5": 0.17,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 12,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    },
+    "7": {
+      "logreg": {
+        "accuracy": 0.525,
+        "ci95": [
+          0.46993749999999995,
+          0.5825
+        ],
+        "top5": 0.805,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 142,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "rf": {
+        "accuracy": 0.4475,
+        "ci95": [
+          0.395,
+          0.5
+        ],
+        "top5": 0.7475,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 131,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "mlp": {
+        "accuracy": 0.355,
+        "ci95": [
+          0.305,
+          0.40506249999999966
+        ],
+        "top5": 0.5925,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 107,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      },
+      "hgb": {
+        "accuracy": 0.0625,
+        "ci95": [
+          0.04,
+          0.0875
+        ],
+        "top5": 0.2,
+        "n_train": 400,
+        "n_test": 400,
+        "patients_any_correct": 24,
+        "n_patients": 200,
+        "chance": 0.005,
+        "exact_upper_95": null
+      }
+    }
+  },
+  "domain_adapt": {},
+  "profiles": {
+    "1": {
+      "post": {
+        "windows": 800,
+        "distinct_profiles": 800,
+        "patients": 200,
+        "profile_fraction": 1.0,
+        "largest_collision": 1,
+        "plurality_ceiling": 1.0
+      },
+      "pre": {
+        "windows": 800,
+        "distinct_profiles": 800,
+        "patients": 200,
+        "profile_fraction": 1.0,
+        "largest_collision": 1,
+        "plurality_ceiling": 1.0
+      }
+    },
+    "6": {
+      "post": {
+        "windows": 800,
+        "distinct_profiles": 17,
+        "patients": 200,
+        "profile_fraction": 0.02125,
+        "largest_collision": 124,
+        "plurality_ceiling": 0.085
+      },
+      "pre": {
+        "windows": 800,
+        "distinct_profiles": 800,
+        "patients": 200,
+        "profile_fraction": 1.0,
+        "largest_collision": 1,
+        "plurality_ceiling": 1.0
+      }
+    },
+    "7": {
+      "post": {
+        "windows": 800,
+        "distinct_profiles": 800,
+        "patients": 200,
+        "profile_fraction": 1.0,
+        "largest_collision": 1,
+        "plurality_ceiling": 1.0
+      },
+      "pre": {
+        "windows": 800,
+        "distinct_profiles": 800,
+        "patients": 200,
+        "profile_fraction": 1.0,
+        "largest_collision": 1,
+        "plurality_ceiling": 1.0
+      }
+    }
+  }
+}

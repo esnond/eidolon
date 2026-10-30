@@ -1,6 +1,6 @@
 {
   "registered_at": "2026-10-30T16:39:05Z",
-  "analysis_completed": "2026-10-30T18:45:00Z",
+  "analysis_completed": "2026-10-30T19:30:00Z",
   "summary": "\u0441\u043c\u0435\u0448\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442: \u043c\u0430\u0441\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u0434\u0430\u043b\u0451\u043d\u043d\u043e\u0441\u0442\u044c \u043e\u0442 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u043c\u043d\u043e\u0433\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u044f \u0438 \u0441\u043d\u0438\u0436\u0430\u0435\u0442 \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0443\u0435\u043c\u043e\u0441\u0442\u044c, \u043d\u043e \u043d\u0435 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0432\u043d\u0443\u0442\u0440\u0438 \u043a\u043e\u0433\u043e\u0440\u0442\u044b; g3 \u043a\u043e\u043b\u043b\u0430\u043f\u0441\u0438\u0440\u0443\u0435\u0442 \u0432 58 \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432, \u0430 \u043d\u0435 \u0432 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u043e\u0444\u0438\u043b\u0438",
   "hypotheses": {
     "h1": {
@@ -221,7 +221,8 @@
     "g3 collapses into 58 profiles over 600 test windows; the patient-level exact-profile ceiling is 0.3867 and rf/hgb top1 equals it",
     "within g1 uniqueness is positively associated with identifiability, rho 0.275-0.387, small effect",
     "g5 with the same intense parameters and a natural stochastic emitter has 600 of 600 unique profiles and rf top1 0.100",
-    "within-subject: natural control rf top1 0.751, deterministic mask 0.005, stochastic mask 0.004 at chance 0.005; masking destroys individual identity, not enhances it"
+    "within-subject: natural control rf top1 0.751, deterministic mask 0.005, stochastic mask 0.004 at chance 0.005; masking destroys individual identity, not enhances it",
+    "within-subject post-only: g6 leaves 17x chance through 17 templates, g7 1-4x chance; pre-to-post transfer fails for both masks"
   ],
   "unsafe_claims": [
     "intense masking creates a rank-1 anomalous and simultaneously unique profile",
@@ -232,13 +233,14 @@
     "the forecast demonstrates a long-horizon prediction limit: within-patient r2 is negative",
     "the 500-candidate accuracy from the protocol applies to the per-group 150-200 class task",
     "the deterministic g3 result generalizes to stochastic masking",
-    "masking increases individual identifiability or preserves a unique signature across the switch"
+    "masking increases individual identifiability or preserves a unique signature across the switch",
+    "masking destroys identity in the strong sense: masked profiles remain identifiable in-domain (g6 0.085, g5 0.100) and pre-to-post linkage through s is not ruled out"
   ],
   "artifacts": {
     "determinism_sha256": "7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9",
     "seed_primary": 20261030,
     "seed_replication": 20261031,
-    "rows": 1991068,
+    "rows": 1991067,
     "patients": 600,
     "g3_distinct_profiles": 58,
     "g3_largest_collision": 16,
@@ -325,5 +327,110 @@
       "anomaly_auc_vs_g1": 0.067
     },
     "interpretation": "the same person is not re-identified after either mask; deterministic mask replaces identity with a template, stochastic mask creates a different natural-like profile. this is a causal argument against the strong paradox."
+  },
+  "post_only_controls": {
+    "status": "exploratory, separates transfer failure from identity destruction",
+    "pre_only_logreg": {
+      "g1": 0.6,
+      "g6": 0.5425,
+      "g7": 0.525
+    },
+    "pre_to_post_rf": {
+      "g1": 0.751,
+      "g6": 0.005,
+      "g7": 0.004
+    },
+    "post_only": {
+      "g1": {
+        "logreg": 0.57,
+        "rf": 0.4625
+      },
+      "g6": {
+        "logreg": 0.0825,
+        "rf": 0.085,
+        "hgb": 0.085,
+        "mlp": 0.0125
+      },
+      "g7": {
+        "logreg": 0.005,
+        "rf": 0.02,
+        "mlp": 0.01,
+        "hgb": 0.015
+      }
+    },
+    "post_profiles": {
+      "g6": "17 distinct over 800 windows, plurality ceiling 0.085",
+      "g7": "800 of 800 distinct"
+    },
+    "s_concentration": {
+      "g6_range": [
+        0.25,
+        0.65
+      ],
+      "g6_mean": 0.4705,
+      "g6_sd": 0.0545,
+      "g3_g5": "uniform [0,1]"
+    },
+    "rank1_post": {
+      "g6": {
+        "pr": 1.553,
+        "lambda1": 0.771
+      },
+      "g7": {
+        "pr": 6.953,
+        "lambda1": 0.294
+      }
+    },
+    "interpretation": "pre-to-post transfer fails for both masks; inside the masked domain the deterministic mask leaves 17x chance through 17 templates and the stochastic mask 1-4x chance because mask parameters concentrate near the natural mean; the strong \"identity destroyed\" claim is replaced by \"transfer broken, residual identification is template-bound or concentration-bound\""
+  },
+  "open_set": {
+    "status": "exploratory verification on test-window pairs",
+    "g1": {
+      "auc": 0.894,
+      "eer": 0.178
+    },
+    "g2": {
+      "auc": 0.689,
+      "eer": 0.368
+    },
+    "g3": {
+      "auc": 0.993,
+      "eer": 0.0125,
+      "note": "measures window duplication; inside one exact profile auc 0.5, no metric separates same and different patients"
+    },
+    "g4": {
+      "auc": 0.502,
+      "eer": 0.497
+    },
+    "g5": {
+      "auc": 0.795,
+      "eer": 0.273
+    },
+    "g6": {
+      "auc": 0.951,
+      "eer": 0.0874
+    },
+    "g7": {
+      "auc": 0.558,
+      "eer": 0.455,
+      "note": "close to g4; stochastic mask hides individuality in the open-set sense"
+    }
+  },
+  "mask_detectability": {
+    "interval_cv": {
+      "g3": 1.0,
+      "g6": 1.0,
+      "core_panel_g5": 0.529,
+      "core_panel_g7": 0.512,
+      "action_entropy_g5": 0.921,
+      "action_entropy_g7": 0.942
+    },
+    "note": "stochastic masks are detectable through reduced action entropy"
+  },
+  "effective_classes": {
+    "g3_hill2": 52.08,
+    "g6_hill2": 10.11,
+    "g5_hill2": 150.0,
+    "g7_hill2": 200.0
   }
 }

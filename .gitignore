@@ -7,3 +7,4 @@ data/*.csv
 data/seed2/*.csv
 release/*.tar.gz
 refs/
+tmp_check/

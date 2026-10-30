@@ -1,0 +1,730 @@
+{
+  "analysis": "open-set verification on existing eidolon features",
+  "reference": {
+    "train_windows": "1-5",
+    "test_windows": "6-9",
+    "space": "standardized features followed by 20-component whitened pca, fit on g1 training windows",
+    "distance": "euclidean distance in the 20-dimensional pca space",
+    "pair_construction": "all unordered pairs of distinct test windows within a patient are same-patient; all unordered pairs of test windows from different patients are different-patient; self pairs excluded",
+    "bootstrap": {
+      "unit": "patient",
+      "resamples": 1000,
+      "ci": "percentile 2.5 and 97.5"
+    }
+  },
+  "groups": {
+    "1": {
+      "group": 1,
+      "source": "results/features.csv",
+      "n_patients": 200,
+      "n_test_windows": 800,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 1200,
+      "n_different_patient_pairs": 318400,
+      "same_patient_distance": {
+        "mean": 4.3613741024427535,
+        "median": 4.2396544377080545,
+        "sd": 1.0058563875901008,
+        "min": 1.7656012268674575,
+        "max": 9.58596513561197
+      },
+      "different_patient_distance": {
+        "mean": 6.242571294210733,
+        "median": 6.165182446165398,
+        "sd": 1.178690210019,
+        "min": 2.000899603905577,
+        "max": 14.748681537520417
+      },
+      "auc": 0.8944297476968175,
+      "auc_ci95": [
+        0.8777414885439578,
+        0.9087874170626994
+      ],
+      "eer": 0.17833333333333334,
+      "eer_ci95": [
+        0.16311427316616955,
+        0.19499999999999995
+      ],
+      "eer_threshold": 5.175742817784184,
+      "eer_fpr": 0.17833333333333334,
+      "eer_fnr": 0.17833333333333334,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 43,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.8777414885439578,
+          0.9087874170626994
+        ],
+        "eer_ci95": [
+          0.16311427316616955,
+          0.19499999999999995
+        ],
+        "auc_boot_sd": 0.007717020949166562,
+        "eer_boot_sd": 0.008233688165219454
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 800,
+      "profile_fraction": 1.0,
+      "largest_profile": 1,
+      "median_profile": 1.0
+    },
+    "2": {
+      "group": 2,
+      "source": "results/features.csv",
+      "n_patients": 150,
+      "n_test_windows": 600,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 900,
+      "n_different_patient_pairs": 178800,
+      "same_patient_distance": {
+        "mean": 4.148000210009027,
+        "median": 4.079113747669247,
+        "sd": 0.9949665979324764,
+        "min": 1.3493375933579226,
+        "max": 8.386502538616993
+      },
+      "different_patient_distance": {
+        "mean": 4.844954118124266,
+        "median": 4.760519681811321,
+        "sd": 1.0572456036880282,
+        "min": 1.583822288771022,
+        "max": 11.790810422266887
+      },
+      "auc": 0.6893481419338802,
+      "auc_ci95": [
+        0.6694779360339255,
+        0.7112979836079887
+      ],
+      "eer": 0.36777777777777776,
+      "eer_ci95": [
+        0.34979278008541115,
+        0.38474299201301315
+      ],
+      "eer_threshold": 4.417529635849137,
+      "eer_fpr": 0.36777777777777776,
+      "eer_fnr": 0.36777777777777776,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 44,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.6694779360339255,
+          0.7112979836079887
+        ],
+        "eer_ci95": [
+          0.34979278008541115,
+          0.38474299201301315
+        ],
+        "auc_boot_sd": 0.010796114941657458,
+        "eer_boot_sd": 0.009038653004536054
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 600,
+      "profile_fraction": 1.0,
+      "largest_profile": 1,
+      "median_profile": 1.0
+    },
+    "3": {
+      "group": 3,
+      "source": "results/features.csv",
+      "n_patients": 150,
+      "n_test_windows": 600,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 900,
+      "n_different_patient_pairs": 178800,
+      "same_patient_distance": {
+        "mean": 1.8650114338012414e-16,
+        "median": 0.0,
+        "sd": 4.519432888713473e-16,
+        "min": 0.0,
+        "max": 2.0350724194510405e-15
+      },
+      "different_patient_distance": {
+        "mean": 5.931231211902588,
+        "median": 5.532302328835754,
+        "sd": 2.9889577096106392,
+        "min": 0.0,
+        "max": 12.134012575116564
+      },
+      "auc": 0.9934148521004227,
+      "auc_ci95": [
+        0.9918953087466482,
+        0.9946674632973368
+      ],
+      "eer": 0.012524916943521595,
+      "eer_ci95": [
+        0.01018158055925183,
+        0.015255498876725974
+      ],
+      "eer_threshold": 1.8343894894033213e-15,
+      "eer_fpr": 0.012524916943521595,
+      "eer_fnr": 0.012524916943521595,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 45,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.9918953087466482,
+          0.9946674632973368
+        ],
+        "eer_ci95": [
+          0.01018158055925183,
+          0.015255498876725974
+        ],
+        "auc_boot_sd": 0.0006982773167975659,
+        "eer_boot_sd": 0.001285132899965538
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 58,
+      "profile_fraction": 0.09666666666666666,
+      "largest_profile": 16,
+      "median_profile": 12.0
+    },
+    "4": {
+      "group": 4,
+      "source": "results/features.csv",
+      "n_patients": 100,
+      "n_test_windows": 400,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 600,
+      "n_different_patient_pairs": 79200,
+      "same_patient_distance": {
+        "mean": 4.78191483522709,
+        "median": 4.666807287782109,
+        "sd": 1.081802650718896,
+        "min": 2.5271630153744566,
+        "max": 11.429969802761438
+      },
+      "different_patient_distance": {
+        "mean": 4.78057605317896,
+        "median": 4.673632108715724,
+        "sd": 1.0891828151805916,
+        "min": 1.554463830982191,
+        "max": 13.602029429629566
+      },
+      "auc": 0.501589941077441,
+      "auc_ci95": [
+        0.4861758874469997,
+        0.5168890878564302
+      ],
+      "eer": 0.49748737373737373,
+      "eer_ci95": [
+        0.4833333333333333,
+        0.5145413109581607
+      ],
+      "eer_threshold": 4.667794436462964,
+      "eer_fpr": 0.49748737373737373,
+      "eer_fnr": 0.49748737373737373,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 46,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.4861758874469997,
+          0.5168890878564302
+        ],
+        "eer_ci95": [
+          0.4833333333333333,
+          0.5145413109581607
+        ],
+        "auc_boot_sd": 0.008182026865046856,
+        "eer_boot_sd": 0.008026982707958253
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 400,
+      "profile_fraction": 1.0,
+      "largest_profile": 1,
+      "median_profile": 1.0
+    },
+    "5": {
+      "group": 5,
+      "source": "results/g5/features.csv",
+      "n_patients": 150,
+      "n_test_windows": 600,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 900,
+      "n_different_patient_pairs": 178800,
+      "same_patient_distance": {
+        "mean": 5.085590926975806,
+        "median": 4.525807063708315,
+        "sd": 2.3039891739685285,
+        "min": 1.825421170054293,
+        "max": 24.6993029111428
+      },
+      "different_patient_distance": {
+        "mean": 8.48918332292522,
+        "median": 7.308846694274502,
+        "sd": 4.1303414136766206,
+        "min": 1.615378753834733,
+        "max": 28.66584406918236
+      },
+      "auc": 0.7954690715883669,
+      "auc_ci95": [
+        0.7816531502179733,
+        0.8093558692113622
+      ],
+      "eer": 0.2733333333333333,
+      "eer_ci95": [
+        0.2577750563063063,
+        0.28555555555555556
+      ],
+      "eer_threshold": 5.446572049597855,
+      "eer_fpr": 0.2733333333333333,
+      "eer_fnr": 0.2733333333333333,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 47,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.7816531502179733,
+          0.8093558692113622
+        ],
+        "eer_ci95": [
+          0.2577750563063063,
+          0.28555555555555556
+        ],
+        "auc_boot_sd": 0.007061466861276827,
+        "eer_boot_sd": 0.007186787376370932
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 600,
+      "profile_fraction": 1.0,
+      "largest_profile": 1,
+      "median_profile": 1.0
+    },
+    "6": {
+      "group": 6,
+      "source": "results/within/features.csv",
+      "n_patients": 200,
+      "n_test_windows": 800,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 1200,
+      "n_different_patient_pairs": 318400,
+      "same_patient_distance": {
+        "mean": 2.7190929162203217e-16,
+        "median": 0.0,
+        "sd": 5.4038844559833835e-16,
+        "min": 0.0,
+        "max": 1.8343894894033213e-15
+      },
+      "different_patient_distance": {
+        "mean": 3.0600764417636115,
+        "median": 4.325658977656999,
+        "sd": 1.9155506414768153,
+        "min": 0.0,
+        "max": 5.692202137512204
+      },
+      "auc": 0.9511963646356784,
+      "auc_ci95": [
+        0.9438135437624293,
+        0.9574190282402311
+      ],
+      "eer": 0.08742921857304643,
+      "eer_ci95": [
+        0.07733394225774474,
+        0.09959576581445446
+      ],
+      "eer_threshold": 1.336885555457667e-15,
+      "eer_fpr": 0.08742921857304643,
+      "eer_fnr": 0.08742921857304643,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 48,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.9438135437624293,
+          0.9574190282402311
+        ],
+        "eer_ci95": [
+          0.07733394225774474,
+          0.09959576581445446
+        ],
+        "auc_boot_sd": 0.0035244238671826023,
+        "eer_boot_sd": 0.005582426076796633
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 17,
+      "profile_fraction": 0.02125,
+      "largest_profile": 124,
+      "median_profile": 44.0
+    },
+    "7": {
+      "group": 7,
+      "source": "results/within/features.csv",
+      "n_patients": 200,
+      "n_test_windows": 800,
+      "windows_per_patient": 4,
+      "n_same_patient_pairs": 1200,
+      "n_different_patient_pairs": 318400,
+      "same_patient_distance": {
+        "mean": 4.210540693731831,
+        "median": 4.147144241598078,
+        "sd": 0.9199716829687099,
+        "min": 2.0158785893119857,
+        "max": 7.071406517987088
+      },
+      "different_patient_distance": {
+        "mean": 4.393231629963954,
+        "median": 4.332769146230143,
+        "sd": 0.906635411843805,
+        "min": 1.2461617136385061,
+        "max": 9.405350561993993
+      },
+      "auc": 0.5576738693467337,
+      "auc_ci95": [
+        0.5440119241270346,
+        0.5711222695484156
+      ],
+      "eer": 0.45499999999999996,
+      "eer_ci95": [
+        0.4438688404005778,
+        0.4683333333333334
+      ],
+      "eer_threshold": 4.231351043076137,
+      "eer_fpr": 0.45499999999999996,
+      "eer_fnr": 0.45499999999999996,
+      "degenerate": false,
+      "bootstrap": {
+        "unit": "patient",
+        "resamples": 1000,
+        "seed": 49,
+        "duplicate_policy": "patients resampled with replacement; within-patient pairs of every sampled copy are same-patient; different-patient pairs are formed only between distinct source patients, cross-copy pairs of a repeated patient are excluded as impostors",
+        "auc_ci95": [
+          0.5440119241270346,
+          0.5711222695484156
+        ],
+        "eer_ci95": [
+          0.4438688404005778,
+          0.4683333333333334
+        ],
+        "auc_boot_sd": 0.007057416048748851,
+        "eer_boot_sd": 0.006377298209526565
+      },
+      "reference": {
+        "reference_group": 1,
+        "reference_train_windows": 1000,
+        "reference_train_patients": 200,
+        "scaler": "standard scaler fit on g1 windows 1-5",
+        "pca_components": 20,
+        "pca_whiten": true,
+        "reference_matrix_sha256": "1080fdfc5d5e6e43366faeb2dfd4d9f2fd5eabf38d264f3cbe8f244c0b057720"
+      },
+      "profile_definition": "feature vector rounded to 6 decimals",
+      "distinct_profiles": 800,
+      "profile_fraction": 1.0,
+      "largest_profile": 1,
+      "median_profile": 1.0
+    }
+  },
+  "g3_within_collision": {
+    "group": 3,
+    "source": "results/features.csv",
+    "test_windows": 600,
+    "patients": 150,
+    "tolerance": 1e-12,
+    "definitions": {
+      "strict_exact_float": {
+        "description": "identical float64 feature vectors; this is the literal exact profile",
+        "profiles": 76,
+        "largest_profile": 16,
+        "profiles_with_both_pair_types": 51,
+        "n_same_pairs_inside_profiles": 744,
+        "n_different_pairs_inside_profiles": 1960,
+        "same_distance": {
+          "mean": 0.0,
+          "median": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "different_distance": {
+          "mean": 0.0,
+          "median": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "pooled_auc": 0.5,
+        "pooled_eer": 0.5,
+        "max_within_profile_feature_range": 0.0,
+        "all_distances_zero": true,
+        "profiles_separated_at_tolerance": 0
+      },
+      "rounded_6": {
+        "description": "feature vector rounded to 6 decimals; this matches the profile definition in results/corrections.json and results/verdicts.json",
+        "profiles": 58,
+        "profile_sizes": {
+          "4": 10,
+          "8": 9,
+          "12": 34,
+          "16": 5
+        },
+        "largest_profile": 16,
+        "max_within_profile_feature_range": 2.021099337273174e-15,
+        "metrics": [
+          {
+            "metric": "euclidean",
+            "n_same_pairs": 900,
+            "n_different_pairs": 2256,
+            "pooled_auc": 0.4780920015760441,
+            "pooled_eer": 0.5124236593323851,
+            "same_distance": {
+              "mean": 1.8650114338012414e-16,
+              "median": 0.0,
+              "sd": 4.519432888713473e-16,
+              "min": 0.0,
+              "max": 2.0350724194510405e-15
+            },
+            "different_distance": {
+              "mean": 1.3359898681665785e-16,
+              "median": 0.0,
+              "sd": 3.8393237751942725e-16,
+              "min": 0.0,
+              "max": 2.0350724194510405e-15
+            },
+            "same_zero_fraction": 0.8266666666666667,
+            "different_zero_fraction": 0.8687943262411347,
+            "max_same": 2.0350724194510405e-15,
+            "max_different": 2.0350724194510405e-15,
+            "profiles_with_both_pair_types": 48,
+            "per_profile_auc": {
+              "mean": 0.4778645833333333,
+              "min": 0.4166666666666667,
+              "max": 0.5
+            },
+            "profiles_separated_at_tolerance": 0,
+            "all_distances_at_or_below_tolerance": true,
+            "name": "pca_euclidean"
+          },
+          {
+            "metric": "euclidean",
+            "n_same_pairs": 900,
+            "n_different_pairs": 2256,
+            "pooled_auc": 0.4782151300236407,
+            "pooled_eer": 0.5124236593323851,
+            "same_distance": {
+              "mean": 9.103828801926283e-17,
+              "median": 0.0,
+              "sd": 2.1040383255703647e-16,
+              "min": 0.0,
+              "max": 6.661338147750939e-16
+            },
+            "different_distance": {
+              "mean": 6.614094614788166e-17,
+              "median": 0.0,
+              "sd": 1.8060367762063278e-16,
+              "min": 0.0,
+              "max": 6.661338147750939e-16
+            },
+            "same_zero_fraction": 0.8266666666666667,
+            "different_zero_fraction": 0.8687943262411347,
+            "max_same": 6.661338147750939e-16,
+            "max_different": 6.661338147750939e-16,
+            "profiles_with_both_pair_types": 48,
+            "per_profile_auc": {
+              "mean": 0.4778645833333333,
+              "min": 0.4166666666666667,
+              "max": 0.5
+            },
+            "profiles_separated_at_tolerance": 0,
+            "all_distances_at_or_below_tolerance": true,
+            "name": "standardized_euclidean"
+          },
+          {
+            "metric": "cityblock",
+            "n_same_pairs": 900,
+            "n_different_pairs": 2256,
+            "pooled_auc": 0.4782151300236407,
+            "pooled_eer": 0.5124236593323851,
+            "same_distance": {
+              "mean": 9.103828801926283e-17,
+              "median": 0.0,
+              "sd": 2.1040383255703647e-16,
+              "min": 0.0,
+              "max": 6.661338147750939e-16
+            },
+            "different_distance": {
+              "mean": 6.614094614788166e-17,
+              "median": 0.0,
+              "sd": 1.8060367762063278e-16,
+              "min": 0.0,
+              "max": 6.661338147750939e-16
+            },
+            "same_zero_fraction": 0.8266666666666667,
+            "different_zero_fraction": 0.8687943262411347,
+            "max_same": 6.661338147750939e-16,
+            "max_different": 6.661338147750939e-16,
+            "profiles_with_both_pair_types": 48,
+            "per_profile_auc": {
+              "mean": 0.4778645833333333,
+              "min": 0.4166666666666667,
+              "max": 0.5
+            },
+            "profiles_separated_at_tolerance": 0,
+            "all_distances_at_or_below_tolerance": true,
+            "name": "standardized_manhattan"
+          },
+          {
+            "metric": "cosine",
+            "n_same_pairs": 900,
+            "n_different_pairs": 2256,
+            "pooled_auc": 0.5046808510638296,
+            "pooled_eer": 0.4972421861942169,
+            "same_distance": {
+              "mean": 2.1464311809419693e-17,
+              "median": 0.0,
+              "sd": 5.5462967140139726e-17,
+              "min": 0.0,
+              "max": 2.220446049250313e-16
+            },
+            "different_distance": {
+              "mean": 2.2834374265340098e-17,
+              "median": 0.0,
+              "sd": 5.691225915516293e-17,
+              "min": 0.0,
+              "max": 2.220446049250313e-16
+            },
+            "same_zero_fraction": 0.8533333333333334,
+            "different_zero_fraction": 0.8439716312056738,
+            "max_same": 2.220446049250313e-16,
+            "max_different": 2.220446049250313e-16,
+            "profiles_with_both_pair_types": 48,
+            "per_profile_auc": {
+              "mean": 0.5,
+              "min": 0.5,
+              "max": 0.5
+            },
+            "profiles_separated_at_tolerance": 0,
+            "all_distances_at_or_below_tolerance": true,
+            "name": "standardized_cosine"
+          },
+          {
+            "metric": "correlation",
+            "n_same_pairs": 900,
+            "n_different_pairs": 2256,
+            "pooled_auc": 0.5032313829787235,
+            "pooled_eer": 0.4975651749347929,
+            "same_distance": {
+              "mean": 6.587323279442596e-17,
+              "median": 0.0,
+              "sd": 1.0026047670699207e-16,
+              "min": 0.0,
+              "max": 2.220446049250313e-16
+            },
+            "different_distance": {
+              "mean": 6.722361044494521e-17,
+              "median": 0.0,
+              "sd": 1.007465681183117e-16,
+              "min": 0.0,
+              "max": 2.220446049250313e-16
+            },
+            "same_zero_fraction": 0.6933333333333334,
+            "different_zero_fraction": 0.686613475177305,
+            "max_same": 2.220446049250313e-16,
+            "max_different": 2.220446049250313e-16,
+            "profiles_with_both_pair_types": 48,
+            "per_profile_auc": {
+              "mean": 0.5006510416666666,
+              "min": 0.5,
+              "max": 0.53125
+            },
+            "profiles_separated_at_tolerance": 0,
+            "all_distances_at_or_below_tolerance": true,
+            "name": "standardized_correlation"
+          }
+        ],
+        "max_abs_auc_deviation_from_0_5": 0.02190799842395591,
+        "any_profile_separated_at_tolerance": false,
+        "tolerance_collapse": {
+          "all_metrics_at_or_below_tolerance": true,
+          "auc_if_distances_snapped_to_zero": 0.5,
+          "eer_if_distances_snapped_to_zero": 0.5,
+          "profiles_separated": 0
+        }
+      }
+    },
+    "profile_definitions": {
+      "strict_exact_float": 76,
+      "rounded_6": 58
+    },
+    "answer": {
+      "can_any_distance_separate_same_patient_pairs_inside_same_profile": false,
+      "reason": "strict exact profiles have identical feature vectors and zero distance for every within-profile pair; rounded profiles differ only by floating point noise up to 2.04e-15, and the pooled auc moves in opposite directions across metrics; at tolerance 1e-12 all within-profile pairs tie, so auc and eer are 0.5 and no profile is separated",
+      "g3_overall_auc_is_not_within_profile_identity": "the high group-level auc comes from all four windows of a g3 patient being exact duplicates; it does not distinguish a patient from a different patient who shares the same profile"
+    }
+  },
+  "interpretation": {
+    "auc": "auc is p(same-patient distance < different-patient distance) with ties counted as 0.5",
+    "eer": "eer is interpolated on the roc segment where false positive rate equals false negative rate; threshold is the first distance at which false positive rate reaches false negative rate and lower means accept as same",
+    "g3": "the g3 group auc is high because every patient has four numerically identical windows; the collision analysis shows that inside an exact profile no distance separates same-patient pairs from different-patient pairs",
+    "g6": "g6 has 17 rounded profiles over 200 patients in test windows; the mask destroys between-patient uniqueness even though each patient stays numerically identical to himself",
+    "g7": "g7 has 800 unique rounded profiles; verification is weak, close to the g4 random control"
+  }
+}

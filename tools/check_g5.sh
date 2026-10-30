@@ -3,6 +3,7 @@ set -eu
 BIN=${1:-./eidolon_gen}
 SEED=${2:-20261030}
 TMP=$(mktemp -d)
+: "${TMPDIR:=/tmp}"
 trap 'rm -rf "$TMP"' EXIT
 "$BIN" --seed "$SEED" --out "$TMP/g5.csv" \
     --n1 200 --n2 150 --n3 150 --n4 100 --n5 150

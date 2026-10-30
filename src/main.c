@@ -40,7 +40,7 @@ static void usage(const char *prog)
 {
     fprintf(stderr,
             "usage: %s [--seed N] [--out PATH] [--days N] "
-            "[--n1 N] [--n2 N] [--n3 N] [--n4 N] [--n5 N] [--chaos]\n", prog);
+            "[--n1 N] [--n2 N] [--n3 N] [--n4 N] [--n5 N] [--n6 N] [--n7 N] [--chaos]\n", prog);
 }
 
 int main(int argc, char **argv)

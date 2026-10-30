@@ -1,6 +1,6 @@
 # provenance
 
-version: 1.2.0
+version: 1.3.0
 date: 2026-10-30
 
 ## what is verified
@@ -35,11 +35,15 @@ date: 2026-10-30
 - g5 stochastic intense and the matched 150 class comparison were specified
   after the primary results were known. they are labelled exploratory and do
   not change h1..h7.
-- the per model g2/g3 tests and the plurality ceiling correction are
-  post hoc corrections to the original average based interpretation.
+- the within subject g6/g7 switch, the per model g2/g3 tests, the plurality
+  ceiling correction, the post only and pre only controls, the open set
+  verification, the mask detectability analysis and the effective classes
+  computation are post hoc exploratory additions.
+- the release hash f46d2689 belongs to v1.2.0; the v1.3.0 hash is recorded in
+  release/eidolon-v1.3.0.sha256.
 
 ## release
 
-- `release/eidolon-v1.2.0.tar.gz` excludes `refs/`, object files, the compiled
+- `release/eidolon-v1.3.0.tar.gz` excludes `refs/`, object files, the compiled
   binary and the release directory itself. build with `make`.
 - `results/manifest.txt` is generated after the release inputs are frozen.

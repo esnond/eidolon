@@ -1,0 +1,90 @@
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+g1 logreg: acc=0.8013 ci=[0.77, 0.8325] top5=0.9675 auc=0.9971 t=1.12s
+g1 rf: acc=0.8137 ci=[0.78125, 0.845] top5=0.9650 auc=0.9963 t=14.81s
+/home/esnond/.local/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1435: FutureWarning: 'n_jobs' has no effect since 1.8 and will be removed in 1.10. You provided 'n_jobs=1', please leave it unspecified.
+  warnings.warn(msg, category=FutureWarning)
+g5 logreg: acc=0.0433 ci=[0.028333333333333332, 0.06] top5=0.2083 auc=0.8335 t=0.74s
+g5 rf: acc=0.1217 ci=[0.09166666666666666, 0.15333333333333332] top5=0.4000 auc=0.9412 t=6.51s
+{
+  "1": {
+    "logreg": {
+      "accuracy": 0.80125,
+      "balanced_accuracy": 0.80125,
+      "macro_f1": 0.796428293928294,
+      "top5": 0.9675,
+      "chance": 0.005,
+      "n_classes": 200,
+      "auc": 0.9971451005025125,
+      "prob_true_mean": 0.4838204272488973,
+      "seconds": 1.12,
+      "n_train": 1000,
+      "n_test": 800,
+      "group": 1,
+      "model": "logreg",
+      "accuracy_ci95": [
+        0.77,
+        0.8325
+      ]
+    },
+    "rf": {
+      "accuracy": 0.81375,
+      "balanced_accuracy": 0.81375,
+      "macro_f1": 0.8055544455544456,
+      "top5": 0.965,
+      "chance": 0.005,
+      "n_classes": 200,
+      "auc": 0.9962978957286432,
+      "prob_true_mean": 0.18401000000000003,
+      "seconds": 14.81,
+      "n_train": 1000,
+      "n_test": 800,
+      "group": 1,
+      "model": "rf",
+      "accuracy_ci95": [
+        0.78125,
+        0.845
+      ]
+    }
+  },
+  "5": {
+    "logreg": {
+      "accuracy": 0.043333333333333335,
+      "balanced_accuracy": 0.043333333333333335,
+      "macro_f1": 0.04226455026455027,
+      "top5": 0.20833333333333334,
+      "chance": 0.006666666666666667,
+      "n_classes": 150,
+      "auc": 0.8334535794183445,
+      "prob_true_mean": 0.0367981323020888,
+      "seconds": 0.74,
+      "n_train": 750,
+      "n_test": 600,
+      "group": 5,
+      "model": "logreg",
+      "accuracy_ci95": [
+        0.028333333333333332,
+        0.06
+      ]
+    },
+    "rf": {
+      "accuracy": 0.12166666666666667,
+      "balanced_accuracy": 0.12166666666666667,
+      "macro_f1": 0.1128131498131498,
+      "top5": 0.4,
+      "chance": 0.006666666666666667,
+      "n_classes": 150,
+      "auc": 0.9411535234899329,
+      "prob_true_mean": 0.06374,
+      "seconds": 6.51,
+      "n_train": 750,
+      "n_test": 600,
+      "group": 5,
+      "model": "rf",
+      "accuracy_ci95": [
+        0.09166666666666666,
+        0.15333333333333332
+      ]
+    }
+  }
+}
