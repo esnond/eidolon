@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "if you use this artifact, cite it as below"
+title: "anomaly without uniqueness: deterministic masking in a synthetic cohort of 600 patients"
+type: software
+authors:
+  - name: "eidolon project contributors"
+version: "1.1.0"
+date-released: "2026-10-30"
+license: MIT
+abstract: "deterministic c99 generator, python identification pipeline, statistical validation and preprint for a synthetic study of behavioral masking, anomaly and re-identification."
+keywords:
+  - digital anonymity
+  - re-identification
+  - synthetic cohort
+  - behavioral biometrics
+  - anomaly detection
+  - reproducibility

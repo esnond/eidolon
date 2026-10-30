@@ -1,0 +1,594 @@
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:178: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:219: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:178: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:211: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/fromnumeric.py:3862: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/home/esnond/.local/lib/python3.13/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{
+  "targets": [
+    "events",
+    "mean_start"
+  ],
+  "cohort": {
+    "events": {
+      "1": {
+        "days_31_60": {
+          "mae": 19.794448059480953,
+          "mean_target": 39.10066666666667,
+          "accuracy": 0.49375676306931804,
+          "r2": 0.08303504210991797,
+          "n": 6000,
+          "baseline_mean_mae": 19.567222222222224,
+          "baseline_persist_mae": 26.062166666666666,
+          "skill_vs_mean": -0.011612575084912757,
+          "skill_vs_persist": 0.2404910799378044,
+          "within_patient_r2_mean": -0.11788397319089033,
+          "within_patient_r2_sd": 0.19368472179568275,
+          "within_patient_r2_n": 200,
+          "accuracy_ci95": [
+            0.47790654553513756,
+            0.5008544124340606
+          ],
+          "r2_ci95": [
+            -0.1464174805904299,
+            -0.09175505942135993
+          ]
+        },
+        "days_61_90": {
+          "mae": 19.91599294578743,
+          "mean_target": 39.63666666666666,
+          "accuracy": 0.49753612953189563,
+          "r2": 0.07161218739768094,
+          "n": 6000,
+          "baseline_mean_mae": 19.573,
+          "baseline_persist_mae": 26.261666666666667,
+          "skill_vs_mean": -0.017523779992205002,
+          "skill_vs_persist": 0.2416325590231353,
+          "within_patient_r2_mean": -0.15939644366302333,
+          "within_patient_r2_sd": 0.2480487391697523,
+          "within_patient_r2_n": 200,
+          "accuracy_ci95": [
+            0.4779295473644609,
+            0.5016235908546585
+          ],
+          "r2_ci95": [
+            -0.19391044543366606,
+            -0.12626177173212863
+          ]
+        }
+      },
+      "2": {
+        "days_31_60": {
+          "mae": 20.315606790094794,
+          "mean_target": 39.25911111111111,
+          "accuracy": 0.48252504412039343,
+          "r2": -0.010914306312839406,
+          "n": 4500,
+          "baseline_mean_mae": 20.03398518518518,
+          "baseline_persist_mae": 26.580444444444446,
+          "skill_vs_mean": -0.014057193429386494,
+          "skill_vs_persist": 0.23569348764817433,
+          "within_patient_r2_mean": -0.14267654201610872,
+          "within_patient_r2_sd": 0.2939484093224093,
+          "within_patient_r2_n": 150,
+          "accuracy_ci95": [
+            0.4640653436740423,
+            0.4904762965343616
+          ],
+          "r2_ci95": [
+            -0.19517735759985497,
+            -0.10006390707874228
+          ]
+        },
+        "days_61_90": {
+          "mae": 20.697418005331667,
+          "mean_target": 40.23444444444444,
+          "accuracy": 0.48557962484332107,
+          "r2": 0.018913353653535303,
+          "n": 4500,
+          "baseline_mean_mae": 20.449792592592594,
+          "baseline_persist_mae": 27.390444444444444,
+          "skill_vs_mean": -0.012108944949826395,
+          "skill_vs_persist": 0.24435625543382933,
+          "within_patient_r2_mean": -0.11070297643304615,
+          "within_patient_r2_sd": 0.289981456606177,
+          "within_patient_r2_n": 150,
+          "accuracy_ci95": [
+            0.46897125884229385,
+            0.4950609441879033
+          ],
+          "r2_ci95": [
+            -0.16286119893604833,
+            -0.06931849635167743
+          ]
+        }
+      },
+      "3": {
+        "days_31_60": {
+          "mae": 1.1806440247568161e-05,
+          "mean_target": 29.233333333333334,
+          "accuracy": 0.9999995961308923,
+          "r2": 0.9999999999995868,
+          "n": 4500,
+          "baseline_mean_mae": 0.0,
+          "baseline_persist_mae": 0.0,
+          "skill_vs_mean": -11805.44024756816,
+          "skill_vs_persist": -11805.44024756816,
+          "within_patient_r2_mean": 1.0,
+          "within_patient_r2_sd": 0.0,
+          "within_patient_r2_n": 25,
+          "accuracy_ci95": [
+            0.9999987743299049,
+            0.9999991645380919
+          ],
+          "r2_ci95": [
+            NaN,
+            NaN
+          ]
+        },
+        "days_61_90": {
+          "mae": 1.1806440247568161e-05,
+          "mean_target": 29.233333333333334,
+          "accuracy": 0.9999995961308923,
+          "r2": 0.9999999999995868,
+          "n": 4500,
+          "baseline_mean_mae": 0.0,
+          "baseline_persist_mae": 0.0,
+          "skill_vs_mean": -11805.44024756816,
+          "skill_vs_persist": -11805.44024756816,
+          "within_patient_r2_mean": 1.0,
+          "within_patient_r2_sd": 0.0,
+          "within_patient_r2_n": 25,
+          "accuracy_ci95": [
+            0.9999987743299049,
+            0.9999991645380919
+          ],
+          "r2_ci95": [
+            NaN,
+            NaN
+          ]
+        }
+      },
+      "4": {
+        "days_31_60": {
+          "mae": 21.292944631047867,
+          "mean_target": 38.58266666666667,
+          "accuracy": 0.4481214889834503,
+          "r2": -0.07550018700606964,
+          "n": 3000,
+          "baseline_mean_mae": 21.090133333333334,
+          "baseline_persist_mae": 27.868,
+          "skill_vs_mean": -0.009616406615788664,
+          "skill_vs_persist": 0.23593567421243478,
+          "within_patient_r2_mean": -0.12322230582616107,
+          "within_patient_r2_sd": 0.21926537918783814,
+          "within_patient_r2_n": 100,
+          "accuracy_ci95": [
+            0.42264375968898354,
+            0.46296928660173886
+          ],
+          "r2_ci95": [
+            -0.1672175620443209,
+            -0.08459841088308709
+          ]
+        },
+        "days_61_90": {
+          "mae": 22.004309496277322,
+          "mean_target": 39.056666666666665,
+          "accuracy": 0.4366055433231034,
+          "r2": -0.06323521788138686,
+          "n": 3000,
+          "baseline_mean_mae": 21.660155555555555,
+          "baseline_persist_mae": 28.572,
+          "skill_vs_mean": -0.015888802822263015,
+          "skill_vs_persist": 0.22986457033888696,
+          "within_patient_r2_mean": -0.10675361304832434,
+          "within_patient_r2_sd": 0.196737505513959,
+          "within_patient_r2_n": 100,
+          "accuracy_ci95": [
+            0.4164472350511935,
+            0.44973560168801124
+          ],
+          "r2_ci95": [
+            -0.14888276486199548,
+            -0.07141588106406108
+          ]
+        }
+      }
+    },
+    "mean_start": {
+      "1": {
+        "days_31_60": {
+          "mae": 3.6551794262842074,
+          "mean_target": 13.064519121599577,
+          "accuracy": 0.7202208981239044,
+          "r2": -0.002812431127673376,
+          "n": 6000,
+          "baseline_mean_mae": 3.6250926237039383,
+          "baseline_persist_mae": 4.59337357352448,
+          "skill_vs_mean": -0.00829959554234172,
+          "skill_vs_persist": 0.20424947638656776,
+          "within_patient_r2_mean": -0.10520053442839888,
+          "within_patient_r2_sd": 0.17102157691264772,
+          "within_patient_r2_n": 200,
+          "accuracy_ci95": [
+            0.7106306282326468,
+            0.7243725111920006
+          ],
+          "r2_ci95": [
+            -0.12934915480601028,
+            -0.0816509759090162
+          ]
+        },
+        "days_61_90": {
+          "mae": 3.608877093262117,
+          "mean_target": 13.083201137664583,
+          "accuracy": 0.7241594732597438,
+          "r2": -0.0043455823383768966,
+          "n": 6000,
+          "baseline_mean_mae": 3.570818463774101,
+          "baseline_persist_mae": 4.500247115012639,
+          "skill_vs_mean": -0.010658237004798732,
+          "skill_vs_persist": 0.19807135007696552,
+          "within_patient_r2_mean": -0.12600926032004414,
+          "within_patient_r2_sd": 0.2775829401311573,
+          "within_patient_r2_n": 200,
+          "accuracy_ci95": [
+            0.7129712661375143,
+            0.7280374864903949
+          ],
+          "r2_ci95": [
+            -0.16491027541806524,
+            -0.09359023985527729
+          ]
+        }
+      },
+      "2": {
+        "days_31_60": {
+          "mae": 3.7109233602085068,
+          "mean_target": 13.169422054591013,
+          "accuracy": 0.7182166882627294,
+          "r2": -0.024829790962254572,
+          "n": 4500,
+          "baseline_mean_mae": 3.694090387015657,
+          "baseline_persist_mae": 4.6636556444419845,
+          "skill_vs_mean": -0.0045567301904727575,
+          "skill_vs_persist": 0.20428872902932227,
+          "within_patient_r2_mean": -0.09433534753155119,
+          "within_patient_r2_sd": 0.19113126498286337,
+          "within_patient_r2_n": 150,
+          "accuracy_ci95": [
+            0.7080852543805557,
+            0.7233171348883677
+          ],
+          "r2_ci95": [
+            -0.12694470228981117,
+            -0.06515615915100498
+          ]
+        },
+        "days_61_90": {
+          "mae": 3.73682260299729,
+          "mean_target": 13.214104528611509,
+          "accuracy": 0.7172095471996436,
+          "r2": -0.047686314787643846,
+          "n": 4500,
+          "baseline_mean_mae": 3.710462382313682,
+          "baseline_persist_mae": 4.647799949248841,
+          "skill_vs_mean": -0.007104295359321444,
+          "skill_vs_persist": 0.19600184091373807,
+          "within_patient_r2_mean": -0.12374680945738113,
+          "within_patient_r2_sd": 0.20372804479632595,
+          "within_patient_r2_n": 150,
+          "accuracy_ci95": [
+            0.7065739127965629,
+            0.7221954308317561
+          ],
+          "r2_ci95": [
+            -0.15798566174359488,
+            -0.09300326566206617
+          ]
+        }
+      },
+      "3": {
+        "days_31_60": {
+          "mae": 7.039684411464482e-05,
+          "mean_target": 11.89088725308642,
+          "accuracy": 0.999994079765234,
+          "r2": 0.999999999483024,
+          "n": 4500,
+          "baseline_mean_mae": 1.8533323024409278e-15,
+          "baseline_persist_mae": 0.0,
+          "skill_vs_mean": -70395.84411464482,
+          "skill_vs_persist": -70395.84411464482,
+          "within_patient_r2_mean": NaN,
+          "within_patient_r2_sd": NaN,
+          "within_patient_r2_n": 0,
+          "accuracy_ci95": [
+            0.9999922345847273,
+            0.9999939992840969
+          ],
+          "r2_ci95": [
+            NaN,
+            NaN
+          ]
+        },
+        "days_61_90": {
+          "mae": 7.039684411464482e-05,
+          "mean_target": 11.89088725308642,
+          "accuracy": 0.999994079765234,
+          "r2": 0.999999999483024,
+          "n": 4500,
+          "baseline_mean_mae": 1.8533323024409278e-15,
+          "baseline_persist_mae": 0.0,
+          "skill_vs_mean": -70395.84411464482,
+          "skill_vs_persist": -70395.84411464482,
+          "within_patient_r2_mean": NaN,
+          "within_patient_r2_sd": NaN,
+          "within_patient_r2_n": 0,
+          "accuracy_ci95": [
+            0.9999922345847273,
+            0.9999939992840969
+          ],
+          "r2_ci95": [
+            NaN,
+            NaN
+          ]
+        }
+      },
+      "4": {
+        "days_31_60": {
+          "mae": 3.746295582112082,
+          "mean_target": 13.055557462841628,
+          "accuracy": 0.713049742014105,
+          "r2": -0.058201652659172876,
+          "n": 3000,
+          "baseline_mean_mae": 3.75404677823316,
+          "baseline_persist_mae": 4.727118723987225,
+          "skill_vs_mean": 0.0020647574681330605,
+          "skill_vs_persist": 0.20748857795723796,
+          "within_patient_r2_mean": -0.09891322913486214,
+          "within_patient_r2_sd": 0.20617578239283504,
+          "within_patient_r2_n": 100,
+          "accuracy_ci95": [
+            0.7040019481812819,
+            0.7197202404179017
+          ],
+          "r2_ci95": [
+            -0.1425236004826712,
+            -0.06165706009224719
+          ]
+        },
+        "days_61_90": {
+          "mae": 3.719885826103657,
+          "mean_target": 13.017631943987489,
+          "accuracy": 0.714242510303744,
+          "r2": -0.04612493638453263,
+          "n": 3000,
+          "baseline_mean_mae": 3.7295319115973684,
+          "baseline_persist_mae": 4.77094031021128,
+          "skill_vs_mean": 0.0025864064773694073,
+          "skill_vs_persist": 0.22030342359514388,
+          "within_patient_r2_mean": -0.07802630236321922,
+          "within_patient_r2_sd": 0.16010394274593523,
+          "within_patient_r2_n": 100,
+          "accuracy_ci95": [
+            0.7066286172350645,
+            0.719930124397935
+          ],
+          "r2_ci95": [
+            -0.11034629069836727,
+            -0.04853043489238119
+          ]
+        }
+      }
+    }
+  },
+  "chaos": {
+    "events": {
+      "days_31_60": {
+        "mae": 19.61855908744001,
+        "mean_target": 38.919,
+        "accuracy": 0.49591307362881853,
+        "r2": 0.08929837082311198,
+        "n": 3000,
+        "baseline_mean_mae": 19.377444444444443,
+        "baseline_persist_mae": 25.812333333333335,
+        "skill_vs_mean": -0.012443056858547408,
+        "skill_vs_persist": 0.23995406249828866,
+        "within_patient_r2_mean": -0.11893158380687446,
+        "within_patient_r2_sd": 0.22044969622170388,
+        "within_patient_r2_n": 100,
+        "accuracy_ci95": [
+          0.4722486328071536,
+          0.5050808842778134
+        ],
+        "r2_ci95": [
+          -0.16302516387490146,
+          -0.07710611198794055
+        ]
+      },
+      "days_61_90": {
+        "mae": 20.370946432669435,
+        "mean_target": 39.23433333333333,
+        "accuracy": 0.48078775139114294,
+        "r2": 0.10115348717061401,
+        "n": 3000,
+        "baseline_mean_mae": 19.73326666666667,
+        "baseline_persist_mae": 25.873666666666665,
+        "skill_vs_mean": -0.032314962179066375,
+        "skill_vs_persist": 0.21267647546400703,
+        "within_patient_r2_mean": -0.16866068861623862,
+        "within_patient_r2_sd": 0.3273991151342812,
+        "within_patient_r2_n": 100,
+        "accuracy_ci95": [
+          0.4484504034666153,
+          0.4880914216737568
+        ],
+        "r2_ci95": [
+          -0.23620250579593735,
+          -0.10981847086069231
+        ]
+      }
+    },
+    "mean_start": {
+      "days_31_60": {
+        "mae": 3.6811202771537785,
+        "mean_target": 13.22414999858971,
+        "accuracy": 0.7216365303216954,
+        "r2": 0.022765912631766638,
+        "n": 3000,
+        "baseline_mean_mae": 3.66811489691044,
+        "baseline_persist_mae": 4.6158726977869,
+        "skill_vs_mean": -0.003545521503236726,
+        "skill_vs_persist": 0.20250827564661655,
+        "within_patient_r2_mean": -0.09929274787545811,
+        "within_patient_r2_sd": 0.16251549657054287,
+        "within_patient_r2_n": 100,
+        "accuracy_ci95": [
+          0.7056727840627286,
+          0.7278926634753617
+        ],
+        "r2_ci95": [
+          -0.13180135703530246,
+          -0.06815186694932342
+        ]
+      },
+      "days_61_90": {
+        "mae": 3.7176990816460815,
+        "mean_target": 13.129527599076518,
+        "accuracy": 0.7168444139675239,
+        "r2": -0.007399215943740378,
+        "n": 3000,
+        "baseline_mean_mae": 3.6945012278034763,
+        "baseline_persist_mae": 4.574010987887462,
+        "skill_vs_mean": -0.006279021825199793,
+        "skill_vs_persist": 0.18721247249055561,
+        "within_patient_r2_mean": -0.12147673076775228,
+        "within_patient_r2_sd": 0.19779567564703204,
+        "within_patient_r2_n": 100,
+        "accuracy_ci95": [
+          0.7013918725497357,
+          0.7241340057530631
+        ],
+        "r2_ci95": [
+          -0.16185281143556332,
+          -0.08414549586855848
+        ]
+      }
+    }
+  },
+  "curve": {
+    "events": [
+      {
+        "mae": 22.49023672772588,
+        "mean_target": 38.89804347826087,
+        "accuracy": 0.4218157337323378,
+        "r2": -0.20688896291357972,
+        "n": 4600,
+        "accuracy_ci95": [
+          0.37310158042331804,
+          0.4329644697688126
+        ],
+        "within_patient_r2_mean": -0.5924094831142611,
+        "days_train": 14
+      },
+      {
+        "mae": 20.084342927820753,
+        "mean_target": 38.86948717948718,
+        "accuracy": 0.4832876792256735,
+        "r2": 0.04640042202999384,
+        "n": 3900,
+        "accuracy_ci95": [
+          0.46012170013618486,
+          0.49023190436109193
+        ],
+        "within_patient_r2_mean": -0.17968142698540351,
+        "days_train": 21
+      },
+      {
+        "mae": 19.61855908744001,
+        "mean_target": 38.919,
+        "accuracy": 0.49591307362881853,
+        "r2": 0.08929837082311198,
+        "n": 3000,
+        "accuracy_ci95": [
+          0.4722486328071536,
+          0.5050808842778134
+        ],
+        "within_patient_r2_mean": -0.11893158380687446,
+        "days_train": 30
+      }
+    ],
+    "mean_start": [
+      {
+        "mae": 4.079946667991848,
+        "mean_target": 13.226904543308155,
+        "accuracy": 0.6915418377268019,
+        "r2": -0.3019878880534492,
+        "n": 4600,
+        "accuracy_ci95": [
+          0.6743058775154087,
+          0.7010570498002053
+        ],
+        "within_patient_r2_mean": -0.4873937490615717,
+        "days_train": 14
+      },
+      {
+        "mae": 3.721604727508328,
+        "mean_target": 13.214604124120836,
+        "accuracy": 0.7183718337263527,
+        "r2": -0.016331585233585688,
+        "n": 3900,
+        "accuracy_ci95": [
+          0.7031962051466106,
+          0.7249065296491222
+        ],
+        "within_patient_r2_mean": -0.14694053978470878,
+        "days_train": 21
+      },
+      {
+        "mae": 3.6811202771537785,
+        "mean_target": 13.22414999858971,
+        "accuracy": 0.7216365303216954,
+        "r2": 0.022765912631766638,
+        "n": 3000,
+        "accuracy_ci95": [
+          0.7056727840627286,
+          0.7278926634753617
+        ],
+        "within_patient_r2_mean": -0.09929274787545811,
+        "days_train": 30
+      }
+    ]
+  }
+}

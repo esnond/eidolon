@@ -1,0 +1,204 @@
+{
+  "per_model_g2_g3": [
+    {
+      "model": "hgb",
+      "g2_mean": 0.06333333333333334,
+      "g3_mean": 0.38666666666666666,
+      "diff_g2_minus_g3": -0.3233333333333333,
+      "p": 7.5244593966936355e-06,
+      "n2": 150,
+      "n3": 150,
+      "p_holm": 2.2573378190080905e-05
+    },
+    {
+      "model": "logreg",
+      "g2_mean": 0.38166666666666665,
+      "g3_mean": 0.29333333333333333,
+      "diff_g2_minus_g3": 0.08833333333333332,
+      "p": 1.635820186013487e-05,
+      "n2": 150,
+      "n3": 150,
+      "p_holm": 3.271640372026974e-05
+    },
+    {
+      "model": "mlp",
+      "g2_mean": 0.31333333333333335,
+      "g3_mean": 0.19166666666666668,
+      "diff_g2_minus_g3": 0.12166666666666667,
+      "p": 1.1667108464262354e-08,
+      "n2": 150,
+      "n3": 150,
+      "p_holm": 4.666843385704942e-08
+    },
+    {
+      "model": "rf",
+      "g2_mean": 0.395,
+      "g3_mean": 0.38666666666666666,
+      "diff_g2_minus_g3": 0.00833333333333336,
+      "p": 0.11213414872095757,
+      "n2": 150,
+      "n3": 150,
+      "p_holm": 0.11213414872095757
+    }
+  ],
+  "plurality": {
+    "1": {
+      "windows": 800,
+      "distinct_profiles": 800,
+      "profile_fraction": 1.0,
+      "max_collision": 1,
+      "plurality_ceiling": 1.0
+    },
+    "2": {
+      "windows": 600,
+      "distinct_profiles": 600,
+      "profile_fraction": 1.0,
+      "max_collision": 1,
+      "plurality_ceiling": 1.0
+    },
+    "3": {
+      "windows": 600,
+      "distinct_profiles": 58,
+      "profile_fraction": 0.09666666666666666,
+      "max_collision": 16,
+      "plurality_ceiling": 0.3866666666666687
+    },
+    "4": {
+      "windows": 400,
+      "distinct_profiles": 400,
+      "profile_fraction": 1.0,
+      "max_collision": 1,
+      "plurality_ceiling": 1.0
+    }
+  },
+  "g3": {
+    "n": 150,
+    "idu_nat_mean": 17.095652312899613,
+    "idu_cohort_mean": 0.06538687674785838,
+    "anomaly_auc_vs_g1": 1.0,
+    "plurality": {
+      "windows": 600,
+      "distinct_profiles": 58,
+      "profile_fraction": 0.09666666666666666,
+      "max_collision": 16,
+      "plurality_ceiling": 0.3866666666666687
+    },
+    "participation_ratio": 2.3799617661722348,
+    "lambda1_share": 0.5000736944184013,
+    "models": {
+      "dummy": {
+        "accuracy": 0.0033333333333333335,
+        "ci95": [
+          0.0,
+          0.008333333333333333
+        ],
+        "top5": 0.03,
+        "auc": 0.49832214765100674
+      },
+      "logreg": {
+        "accuracy": 0.29333333333333333,
+        "ci95": [
+          0.22666666666666666,
+          0.36333333333333334
+        ],
+        "top5": 0.9,
+        "auc": 0.9907046979865769
+      },
+      "rf": {
+        "accuracy": 0.38666666666666666,
+        "ci95": [
+          0.31,
+          0.46004166666666646
+        ],
+        "top5": 1.0,
+        "auc": 0.9936912751677854
+      },
+      "hgb": {
+        "accuracy": 0.38666666666666666,
+        "ci95": [
+          0.30666666666666664,
+          0.4666666666666667
+        ],
+        "top5": 1.0,
+        "auc": 0.9936912751677854
+      },
+      "mlp": {
+        "accuracy": 0.19166666666666668,
+        "ci95": [
+          0.135,
+          0.255
+        ],
+        "top5": 0.615,
+        "auc": 0.980900447427293
+      }
+    }
+  },
+  "g5_stochastic_intense": {
+    "n": 150,
+    "idu_nat_mean": 5.223466670516351,
+    "idu_cohort_mean": 3.4071393245511854,
+    "anomaly_mean": 0.47831253681340913,
+    "models": {
+      "dummy": {
+        "accuracy": 0.0033333333333333335,
+        "ci95": [
+          0.0,
+          0.008333333333333333
+        ],
+        "top5": 0.03,
+        "auc": 0.49832214765100674
+      },
+      "logreg": {
+        "accuracy": 0.04,
+        "ci95": [
+          0.025,
+          0.056666666666666664
+        ],
+        "top5": 0.16333333333333333,
+        "auc": 0.8120162192393735
+      },
+      "rf": {
+        "accuracy": 0.1,
+        "ci95": [
+          0.075,
+          0.13
+        ],
+        "top5": 0.41333333333333333,
+        "auc": 0.936922539149888
+      },
+      "hgb": {
+        "accuracy": 0.04,
+        "ci95": [
+          0.021666666666666667,
+          0.06
+        ],
+        "top5": 0.125,
+        "auc": 0.6295302013422818
+      },
+      "mlp": {
+        "accuracy": 0.043333333333333335,
+        "ci95": [
+          0.02666666666666667,
+          0.06166666666666667
+        ],
+        "top5": 0.215,
+        "auc": 0.8716834451901565
+      }
+    },
+    "plurality": {
+      "windows": 600,
+      "distinct_profiles": 600,
+      "profile_fraction": 1.0,
+      "max_collision": 1,
+      "plurality_ceiling": 1.0
+    },
+    "participation_ratio": 1.9444387209455267,
+    "lambda1_share": 0.6916369400740905,
+    "anomaly_auc_vs_g1": 0.6289333333333333
+  },
+  "interpretation": {
+    "consensus_is_invalid": "average across models hides opposite signs; per-model tests are primary",
+    "template_bound": "g3 plurality ceiling 0.3867 equals rf and hgb top1, so no residual individual signal above the exact-profile bound",
+    "g5": "stochastic emission with the same affine intense parameters restores 600 of 600 distinct profiles and lowers rf top1 to 0.100"
+  }
+}

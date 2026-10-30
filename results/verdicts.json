@@ -1,0 +1,277 @@
+{
+  "registered_at": "2026-10-30T16:39:05Z",
+  "analysis_completed": "2026-10-30T18:20:00Z",
+  "summary": "\u0441\u043c\u0435\u0448\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442: \u043c\u0430\u0441\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u0434\u0430\u043b\u0451\u043d\u043d\u043e\u0441\u0442\u044c \u043e\u0442 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u043c\u043d\u043e\u0433\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u044f \u0438 \u0441\u043d\u0438\u0436\u0430\u0435\u0442 \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0443\u0435\u043c\u043e\u0441\u0442\u044c, \u043d\u043e \u043d\u0435 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0432\u043d\u0443\u0442\u0440\u0438 \u043a\u043e\u0433\u043e\u0440\u0442\u044b; g3 \u043a\u043e\u043b\u043b\u0430\u043f\u0441\u0438\u0440\u0443\u0435\u0442 \u0432 58 \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432, \u0430 \u043d\u0435 \u0432 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u043e\u0444\u0438\u043b\u0438",
+  "hypotheses": {
+    "h1": {
+      "verdict": "partially_supported",
+      "claim": "idu_nat g3 > g2 > g1",
+      "status": "\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043e \u0434\u043b\u044f \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u044f \u0434\u043e \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u043c\u043d\u043e\u0433\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u044f",
+      "evidence": {
+        "means": {
+          "g1": 3.825,
+          "g2": 5.084,
+          "g3": 17.096,
+          "g4": 3.449
+        },
+        "g1_vs_g3_cohen_d": -13.16,
+        "g1_vs_g3_d_ci95": [
+          -14.33,
+          -12.43
+        ],
+        "kruskal_p": 1.36e-94,
+        "holm_7_p": 9.53e-94
+      },
+      "note": "idu_nat \u044d\u0442\u043e \u0440\u0430\u0441\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0434\u043e \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0439 \u0440\u0435\u0444\u0435\u0440\u0435\u043d\u0441\u043d\u043e\u0439 \u0432\u044b\u0431\u043e\u0440\u043a\u0438, \u043d\u0435 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c. h1b \u043d\u0438\u0436\u0435 \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 \u043f\u0440\u043e\u0442\u0438\u0432\u043e\u043f\u043e\u043b\u043e\u0436\u043d\u044b\u0439 \u0437\u043d\u0430\u043a \u0434\u043b\u044f \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0438."
+    },
+    "h1b": {
+      "verdict": "refuted",
+      "claim": "idu_cohort g3 > g2 > g1",
+      "status": "\u043e\u043f\u0440\u043e\u0432\u0435\u0440\u0433\u043d\u0443\u0442\u043e: g3 \u043d\u0430\u0438\u043c\u0435\u043d\u0435\u0435 \u0443\u043d\u0438\u043a\u0430\u043b\u0435\u043d \u0432\u043d\u0443\u0442\u0440\u0438 \u043a\u043e\u0433\u043e\u0440\u0442\u044b",
+      "evidence": {
+        "means": {
+          "g1": 3.858,
+          "g2": 2.9,
+          "g3": 0.065,
+          "g4": 3.009
+        },
+        "g3_ci95": [
+          0.054,
+          0.078
+        ],
+        "g1_vs_g3_p_holm": 6.5e-54
+      },
+      "note": "g3 \u043e\u043a\u043d\u0430 \u043a\u043e\u043b\u043b\u0430\u043f\u0441\u0438\u0440\u0443\u044e\u0442 \u0432 58 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u0432\u0435\u043a\u0442\u043e\u0440\u043e\u0432 \u043d\u0430 600 \u0442\u0435\u0441\u0442\u043e\u0432\u044b\u0445 \u043e\u043a\u043e\u043d, \u043c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u0430\u044f \u043a\u043e\u043b\u043b\u0438\u0437\u0438\u044f 16, \u043c\u0435\u0434\u0438\u0430\u043d\u043d\u0430\u044f 12."
+    },
+    "h2": {
+      "verdict": "refuted_as_strict_order_and_consensus",
+      "claim": "accuracy g1 > g2 > g3",
+      "status": "g1 >> g2/g3; per-model tests disagree in direction; average across models is not a test",
+      "evidence": {
+        "consensus_accuracy": {
+          "g1": 0.602,
+          "g2": 0.288,
+          "g3": 0.315,
+          "g4": 0.016
+        },
+        "g2_vs_g3_cohen_d": -0.118,
+        "g2_vs_g3_p_holm": 0.87,
+        "rf": {
+          "g1": 0.8175,
+          "g2": 0.395,
+          "g3": 0.3867
+        },
+        "logreg": {
+          "g1": 0.7688,
+          "g2": 0.3817,
+          "g3": 0.2933
+        },
+        "mlp": {
+          "g1": 0.6863,
+          "g2": 0.3133,
+          "g3": 0.1917
+        },
+        "hgb": {
+          "g1": 0.135,
+          "g2": 0.0633,
+          "g3": 0.3867
+        },
+        "per_model_g2_vs_g3": {
+          "logreg": {
+            "g2": 0.3817,
+            "g3": 0.2933,
+            "diff": 0.0883,
+            "p_holm": 3.27e-05
+          },
+          "mlp": {
+            "g2": 0.3133,
+            "g3": 0.1917,
+            "diff": 0.1217,
+            "p_holm": 4.67e-08
+          },
+          "hgb": {
+            "g2": 0.0633,
+            "g3": 0.3867,
+            "diff": -0.3233,
+            "p_holm": 2.26e-05
+          },
+          "rf": {
+            "g2": 0.395,
+            "g3": 0.3867,
+            "diff": 0.0083,
+            "p_holm": 0.1121
+          }
+        }
+      },
+      "note": "the previous consensus p=0.870 averaged opposite signs; it is not evidence of indistinguishability. matched 150-class sensitivity selected rf on g1 validation and reproduced g1 0.820, g2 0.395, g3 0.387, with the same per-model heterogeneity."
+    },
+    "h3": {
+      "verdict": "supported_but_trivial",
+      "claim": "anomaly auc g3 vs g1 >= 0.80",
+      "status": "\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043e, \u043d\u043e \u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0434\u043e\u0441\u0442\u0438\u0433\u0430\u0435\u0442\u0441\u044f \u043e\u0434\u043d\u0438\u043c \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u043e\u043c \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u0438",
+      "evidence": {
+        "patient_auc": {
+          "g2": 0.956,
+          "g3": 1.0,
+          "g4": 0.153
+        },
+        "window_auc": {
+          "g2": 0.901,
+          "g3": 1.0,
+          "g4": 0.25
+        },
+        "univariate_auc_1_0": [
+          "t_sd_h",
+          "t_circ_r",
+          "sessions_sd",
+          "self_transition_rate",
+          "repeat_rate",
+          "backtrack_rate",
+          "seq_len_sd",
+          "interval_sd_log",
+          "interval_cv",
+          "interval_iqr_log"
+        ]
+      },
+      "note": "auc 1.0 \u043d\u0435 \u0434\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 rank-1 \u0441\u0438\u0433\u043d\u0430\u0442\u0443\u0440\u0443; \u043e\u043d \u043f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442 \u043f\u043e\u0440\u043e\u0433\u043e\u0432\u0443\u044e \u0440\u0435\u0433\u0443\u043b\u044f\u0440\u043d\u043e\u0441\u0442\u044c. g4 auc \u043d\u0438\u0436\u0435 0.5 \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442, \u0447\u0442\u043e g4 \u0432\u044b\u0433\u043b\u044f\u0434\u0438\u0442 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u0435\u0435 g1 \u043f\u043e anomaly score."
+    },
+    "h4": {
+      "verdict": "supported_small_effect",
+      "claim": "\u0432\u043d\u0443\u0442\u0440\u0438 g1 idu \u043f\u043e\u043b\u043e\u0436\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u0441\u0432\u044f\u0437\u0430\u043d \u0441 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0443\u0435\u043c\u043e\u0441\u0442\u044c\u044e",
+      "status": "\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043e, \u044d\u0444\u0444\u0435\u043a\u0442 \u043c\u0430\u043b\u044b\u0439",
+      "evidence": {
+        "idu_nat_rho": 0.275,
+        "idu_nat_ci95": [
+          0.151,
+          0.394
+        ],
+        "idu_nat_p_holm": 0.00033,
+        "idu_cohort_rho": 0.387,
+        "idu_cohort_p": 1.5e-08,
+        "r_squared": 0.076
+      },
+      "note": "\u0441\u0432\u044f\u0437\u044c \u0432\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0434\u043b\u044f \u0434\u0432\u0443\u0445 \u043c\u0435\u0442\u0440\u0438\u043a, \u043d\u043e \u043e\u0431\u044a\u044f\u0441\u043d\u044f\u0435\u0442 7.6% \u0434\u0438\u0441\u043f\u0435\u0440\u0441\u0438\u0438; per-model rho \u043c\u0435\u043d\u044c\u0448\u0435 0.16. exploratory."
+    },
+    "h5": {
+      "verdict": "refuted",
+      "claim": "chaos forecast accuracy days 31-60 > days 61-90",
+      "status": "\u043e\u043f\u0440\u043e\u0432\u0435\u0440\u0433\u043d\u0443\u0442\u043e: \u043f\u0430\u0434\u0435\u043d\u0438\u0435 0.020, ci \u0432\u043a\u043b\u044e\u0447\u0430\u0435\u0442 0, p=0.172",
+      "evidence": {
+        "chaos_events_mean_a": 0.4891,
+        "chaos_events_mean_b": 0.4687,
+        "chaos_events_diff": 0.0204,
+        "chaos_events_diff_ci95": [
+          -0.0049,
+          0.0446
+        ],
+        "chaos_events_p": 0.172,
+        "chaos_events_dz": 0.16,
+        "chaos_mean_start_p": 0.285,
+        "within_patient_r2_g1": [
+          -0.118,
+          -0.159
+        ],
+        "within_patient_r2_chaos": [
+          -0.119,
+          -0.169
+        ],
+        "skill_vs_patient_mean": [
+          -0.012,
+          -0.032
+        ]
+      },
+      "note": "\u043c\u043e\u0434\u0435\u043b\u044c \u043e\u0434\u043d\u043e\u0448\u0430\u0433\u043e\u0432\u0430\u044f, \u0431\u0435\u0437 within-patient skill; accuracy=1-mae/mean \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f skill score. g3 accuracy 1.0 \u044d\u0442\u043e manipulation check \u0434\u0435\u0442\u0435\u0440\u043c\u0438\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440\u0430. claim \u043e \u043f\u0440\u0435\u0434\u0435\u043b\u0435 \u0434\u043e\u043b\u0433\u043e\u0441\u0440\u043e\u0447\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0433\u043d\u043e\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u043d\u044f\u0442."
+    },
+    "h6": {
+      "verdict": "refuted",
+      "claim": "g3 rank-1: participation ratio < 2.0 \u0438 lambda1 share > 0.80",
+      "status": "\u043e\u043f\u0440\u043e\u0432\u0435\u0440\u0433\u043d\u0443\u0442\u043e \u043d\u0430 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u043c\u044b\u0445 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0430\u0445",
+      "evidence": {
+        "participation_ratio": 2.38,
+        "lambda1_share": 0.5,
+        "posthoc_spearman_pr": 2.155,
+        "posthoc_spearman_lambda1": 0.666,
+        "seed2_pr": 2.381,
+        "seed2_lambda1": 0.519
+      },
+      "note": "\u043b\u0430\u0442\u0435\u043d\u0442\u043d\u044b\u0435 24 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430 g3 \u043f\u043e\u0441\u0442\u0440\u043e\u0435\u043d\u044b \u043a\u0430\u043a \u0430\u0444\u0444\u0438\u043d\u043d\u0430\u044f \u0444\u0443\u043d\u043a\u0446\u0438\u044f \u043e\u0434\u043d\u043e\u0433\u043e s, \u043d\u043e 51 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u043c\u044b\u0439 \u043f\u0440\u0438\u0437\u043d\u0430\u043a \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043b\u0438\u043d\u0435\u0439\u043d\u043e rank-1. \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u0430\u044f \u0444\u043e\u0440\u043c\u0443\u043b\u0438\u0440\u043e\u0432\u043a\u0430: low-dimensional (pr 2.38), \u043d\u0435 rank-1. g5 stochastic intense: pr 1.944, lambda1 0.692, still below the 0.80 lambda1 threshold."
+    },
+    "h7": {
+      "verdict": "inconclusive",
+      "claim": "g4 accuracy \u043d\u0435 \u0432\u044b\u0448\u0435 chance + 2 binomial sd",
+      "status": "\u043d\u0435\u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u043e: rf \u0432\u044b\u0448\u0435 \u043f\u043e\u0440\u043e\u0433\u0430 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u043c \u0441\u0438\u0434\u0435, \u043d\u0430 \u0432\u0442\u043e\u0440\u043e\u043c \u0441\u0438\u0434\u0435 \u043d\u0430 \u0443\u0440\u043e\u0432\u043d\u0435 chance",
+      "evidence": {
+        "primary_rf_accuracy": 0.025,
+        "primary_rf_chance": 0.01,
+        "window_level_rf_p_holm_5": 0.039,
+        "patient_level_rf_p": 0.0174,
+        "patient_level_rf_p_holm_5": 0.087,
+        "patient_level_rf_p_holm_7": 0.348,
+        "seed2_rf_accuracy": 0.0075,
+        "seed2_logreg_accuracy": 0.01
+      },
+      "note": "g4 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0447\u0438\u0441\u0442\u044b\u043c white noise \u0438\u0437 \u043f\u0440\u043e\u0442\u043e\u043a\u043e\u043b\u0430: \u044d\u0442\u043e daily re-randomized natural. 9/100 \u043f\u0430\u0446\u0438\u0435\u043d\u0442\u043e\u0432 \u0441 \u0445\u043e\u0442\u044f \u0431\u044b \u043e\u0434\u043d\u0438\u043c \u0432\u0435\u0440\u043d\u044b\u043c \u043e\u043a\u043d\u043e\u043c \u043f\u0440\u043e\u0442\u0438\u0432 \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u044f 3.94; \u043f\u043e\u0441\u043b\u0435 \u043f\u043e\u043f\u0440\u0430\u0432\u043a\u0438 \u043d\u0430 5 \u043c\u043e\u0434\u0435\u043b\u0435\u0439 p=0.087, \u043d\u0430 7 \u0442\u0435\u0441\u0442\u043e\u0432 p=0.348. overfitting \u043d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u0435\u043d."
+    }
+  },
+  "safe_claims": [
+    "the generator is deterministic: two runs with seed 20261030 produce an identical csv, sha256 7841bd66...",
+    "g1 is identifiable at 0.60-0.82 top1 depending on the model; g2 and g3 at 0.29-0.40; g1 is far above both",
+    "per-model g2 vs g3 tests disagree in direction: logreg and mlp favor g2, hgb favors g3, rf is a tie",
+    "g3 is perfectly separable from g1 by a single regularity feature; this is a threshold, not a unique signature",
+    "g3 collapses into 58 profiles over 600 test windows; the patient-level exact-profile ceiling is 0.3867 and rf/hgb top1 equals it",
+    "within g1 uniqueness is positively associated with identifiability, rho 0.275-0.387, small effect",
+    "g5 with the same intense parameters and a natural stochastic emitter has 600 of 600 unique profiles and rf top1 0.100"
+  ],
+  "unsafe_claims": [
+    "intense masking creates a rank-1 anomalous and simultaneously unique profile",
+    "rank-1 or near rank-1 as the headline result",
+    "g2 and g3 are statistically indistinguishable; the average across models p=0.870 hides opposite signs",
+    "g3 patients are unique within the cohort: idu_cohort 0.065, the minimum",
+    "g4 proves the absence of overfitting: rf 0.025 on the primary seed, 0.0075 on the second",
+    "the forecast demonstrates a long-horizon prediction limit: within-patient r2 is negative",
+    "the 500-candidate accuracy from the protocol applies to the per-group 150-200 class task",
+    "the deterministic g3 result generalizes to stochastic masking"
+  ],
+  "artifacts": {
+    "determinism_sha256": "7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9",
+    "seed_primary": 20261030,
+    "seed_replication": 20261031,
+    "rows": 1991068,
+    "patients": 600,
+    "g3_distinct_profiles": 58,
+    "g3_largest_collision": 16,
+    "g5_cohort": "data/g5.csv",
+    "corrections": "results/corrections.json",
+    "g3_plurality_ceiling": 0.3867
+  },
+  "g5_sensitivity": {
+    "status": "exploratory, not preregistered",
+    "n": 150,
+    "windows": 600,
+    "distinct_profiles": 600,
+    "profile_fraction": 1.0,
+    "plurality_ceiling": 1.0,
+    "idu_nat": 5.223,
+    "idu_cohort": 3.407,
+    "anomaly_auc_vs_g1": 0.629,
+    "accuracy": {
+      "rf": 0.1,
+      "rf_ci95": [
+        0.075,
+        0.13
+      ],
+      "rf_top5": 0.413,
+      "logreg": 0.04,
+      "mlp": 0.043,
+      "hgb": 0.04
+    },
+    "participation_ratio": 1.944,
+    "lambda1_share": 0.692,
+    "interpretation": "same affine intense parameters, natural stochastic emission; no template collapse, moderate anomaly, much lower top1"
+  },
+  "plurality_correction": {
+    "g3_profile_fraction": 0.0967,
+    "g3_plurality_ceiling": 0.3867,
+    "note": "0.0967 is a window-level profile fraction, not the top1 bound. the patient-level exact-profile bound is 58/150=0.3867, equal to rf and hgb top1."
+  }
+}

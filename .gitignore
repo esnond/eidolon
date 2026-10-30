@@ -1,0 +1,9 @@
+*.o
+eidolon_gen
+seed.stamp
+__pycache__/
+*.pyc
+data/*.csv
+data/seed2/*.csv
+release/*.tar.gz
+refs/

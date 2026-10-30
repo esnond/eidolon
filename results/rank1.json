@@ -1,0 +1,26 @@
+{
+  "1": {
+    "participation_ratio": 10.815669794150155,
+    "lambda1_share": 0.19034193768743762,
+    "n_windows": 1800,
+    "n_features": 51
+  },
+  "2": {
+    "participation_ratio": 8.143096307183328,
+    "lambda1_share": 0.24623999589337442,
+    "n_windows": 1350,
+    "n_features": 51
+  },
+  "3": {
+    "participation_ratio": 2.3799617661722348,
+    "lambda1_share": 0.5000736944184013,
+    "n_windows": 1350,
+    "n_features": 51
+  },
+  "4": {
+    "participation_ratio": 8.148698676885296,
+    "lambda1_share": 0.25179513389618746,
+    "n_windows": 900,
+    "n_features": 51
+  }
+}

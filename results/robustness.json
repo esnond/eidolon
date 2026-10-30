@@ -1,0 +1,260 @@
+{
+  "collisions": {
+    "1": {
+      "windows": 800,
+      "distinct_profiles": 800,
+      "largest_collision": 1,
+      "median_collision": 1.0,
+      "profile_fraction": 1.0,
+      "plurality_ceiling": 1.0,
+      "patients": 200,
+      "windows_per_patient": 4.0
+    },
+    "2": {
+      "windows": 600,
+      "distinct_profiles": 600,
+      "largest_collision": 1,
+      "median_collision": 1.0,
+      "profile_fraction": 1.0,
+      "plurality_ceiling": 1.0,
+      "patients": 150,
+      "windows_per_patient": 4.0
+    },
+    "3": {
+      "windows": 600,
+      "distinct_profiles": 58,
+      "largest_collision": 16,
+      "median_collision": 12.0,
+      "profile_fraction": 0.09666666666666666,
+      "plurality_ceiling": 0.3866666666666687,
+      "patients": 150,
+      "windows_per_patient": 4.0
+    },
+    "4": {
+      "windows": 400,
+      "distinct_profiles": 400,
+      "largest_collision": 1,
+      "median_collision": 1.0,
+      "profile_fraction": 1.0,
+      "plurality_ceiling": 1.0,
+      "patients": 100,
+      "windows_per_patient": 4.0
+    }
+  },
+  "univariate_anomaly": {
+    "t_sd_h": 1.0,
+    "t_circ_r": 1.0,
+    "sessions_sd": 1.0,
+    "self_transition_rate": 1.0,
+    "repeat_rate": 1.0,
+    "backtrack_rate": 1.0,
+    "seq_len_sd": 1.0,
+    "interval_sd_log": 1.0,
+    "interval_cv": 1.0,
+    "interval_iqr_log": 1.0
+  },
+  "idu_cohort": {
+    "1": {
+      "mean": 3.857540551003859,
+      "sd": 0.5290001690797355,
+      "n": 200,
+      "ci95": [
+        3.7861884083327237,
+        3.9309402124226103
+      ]
+    },
+    "2": {
+      "mean": 2.9001679233900903,
+      "sd": 0.23819196067328374,
+      "n": 150,
+      "ci95": [
+        2.861571321717287,
+        2.9384102550173243
+      ]
+    },
+    "3": {
+      "mean": 0.06538687674785838,
+      "sd": 0.07613052108665468,
+      "n": 150,
+      "ci95": [
+        0.053523834379793904,
+        0.07799360578619348
+      ]
+    },
+    "4": {
+      "mean": 3.0086169532065044,
+      "sd": 0.24082160593048588,
+      "n": 100,
+      "ci95": [
+        2.964260921330967,
+        3.056642060150556
+      ]
+    },
+    "pairwise": [
+      {
+        "a": 1,
+        "b": 2,
+        "p": 1.7271887692097012e-52,
+        "p_holm": 3.4543775384194024e-52
+      },
+      {
+        "a": 1,
+        "b": 3,
+        "p": 1.0379048684323186e-57,
+        "p_holm": 3.113714605296956e-57
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "p": 1.0637118193928942e-50,
+        "p_holm": 1.0637118193928942e-50
+      }
+    ],
+    "h4_cohort": {
+      "rho": 0.3869401182827739,
+      "p": 1.514777843230804e-08,
+      "n": 200
+    }
+  },
+  "h7_patient_level": {
+    "dummy": {
+      "patients_any_correct": 2,
+      "n_patients": 100,
+      "expected_any_chance": 3.9403990000000055,
+      "p": 0.9084156387160767,
+      "seed2_accuracy": null,
+      "primary_accuracy": 0.005,
+      "p_holm_5_models": 1.0
+    },
+    "logreg": {
+      "patients_any_correct": 5,
+      "n_patients": 100,
+      "expected_any_chance": 3.9403990000000055,
+      "p": 0.35925771149266233,
+      "seed2_accuracy": {
+        "accuracy": 0.01,
+        "ci95": [
+          0.0025,
+          0.02
+        ],
+        "top5": 0.04,
+        "auc": 0.4824242424242424
+      },
+      "primary_accuracy": 0.015,
+      "p_holm_5_models": 1.0
+    },
+    "rf": {
+      "patients_any_correct": 9,
+      "n_patients": 100,
+      "expected_any_chance": 3.9403990000000055,
+      "p": 0.01741341422801259,
+      "seed2_accuracy": {
+        "accuracy": 0.0075,
+        "ci95": [
+          0.0,
+          0.0175
+        ],
+        "top5": 0.04,
+        "auc": 0.4698516414141414
+      },
+      "primary_accuracy": 0.025,
+      "p_holm_5_models": 0.08706707114006296
+    },
+    "hgb": {
+      "patients_any_correct": 4,
+      "n_patients": 100,
+      "expected_any_chance": 3.9403990000000055,
+      "p": 0.5585531180567184,
+      "seed2_accuracy": null,
+      "primary_accuracy": 0.01,
+      "p_holm_5_models": 1.0
+    },
+    "mlp": {
+      "patients_any_correct": 5,
+      "n_patients": 100,
+      "expected_any_chance": 3.9403990000000055,
+      "p": 0.35925771149266233,
+      "seed2_accuracy": null,
+      "primary_accuracy": 0.0125,
+      "p_holm_5_models": 1.0
+    }
+  },
+  "h3_window_auc": {
+    "g2_vs_g1": {
+      "auc": 0.9010104166666666,
+      "ci95": [
+        0.8782697512926403,
+        0.9222386595103876
+      ],
+      "n_windows": 1400
+    },
+    "g3_vs_g1": {
+      "auc": 1.0,
+      "ci95": [
+        0.9999999999999999,
+        1.0
+      ],
+      "n_windows": 1400
+    },
+    "g4_vs_g1": {
+      "auc": 0.24972187499999998,
+      "ci95": [
+        0.21522157314869192,
+        0.28422384526727357
+      ],
+      "n_windows": 1200
+    }
+  },
+  "heldout_g1_reference": {
+    "1": {
+      "n": 800,
+      "idu_nat_mean": 4.100942414558837,
+      "anomaly_mean": 0.4372635427712612
+    },
+    "2": {
+      "n": 600,
+      "idu_nat_mean": 5.2866138971556245,
+      "anomaly_mean": 0.4838496479586638
+    },
+    "3": {
+      "n": 600,
+      "idu_nat_mean": 16.507987021592516,
+      "anomaly_mean": 0.6629437866676788
+    },
+    "4": {
+      "n": 400,
+      "idu_nat_mean": 3.665252468400463,
+      "anomaly_mean": 0.41375030842074706
+    }
+  },
+  "multiplicity_7": {
+    "h1": {
+      "p": 1.3609731333350112e-94,
+      "p_holm": 9.526811933345078e-94
+    },
+    "h2": {
+      "p": 0.8695418357263851,
+      "p_holm": 1.0
+    },
+    "h3": {
+      "p": 1.044562648358573e-57,
+      "p_holm": 6.267375890151438e-57
+    },
+    "h4": {
+      "p": 8.135562194465512e-05,
+      "p_holm": 0.0004067781097232756
+    },
+    "h5": {
+      "p": 0.17224834720781323,
+      "p_holm": 0.5167450416234397
+    },
+    "h6": {
+      "p": 1.0,
+      "p_holm": 1.0
+    },
+    "h7": {
+      "p": 0.08706707114006296,
+      "p_holm": 0.34826828456025183
+    }
+  }
+}
