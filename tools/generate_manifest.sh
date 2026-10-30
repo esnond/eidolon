@@ -36,8 +36,10 @@ PY
     echo "# cohort_sha256: $(sha256sum data/cohort.csv | cut -d' ' -f1)"
     echo "# chaos_sha256: $(sha256sum data/chaos.csv | cut -d' ' -f1)"
     echo "# g5_sha256: $(sha256sum data/g5.csv | cut -d' ' -f1)"
+    echo "# within_sha256: $(sha256sum data/within.csv | cut -d' ' -f1)"
     echo "# chaos_flags: --chaos --n1 100 --n2 0 --n3 0 --n4 0"
     echo "# g5_flags: --n1 200 --n2 150 --n3 150 --n4 100 --n5 150"
+    echo "# within_flags: --n1 200 --n2 0 --n3 0 --n4 0 --n5 0 --n6 200 --n7 200"
     echo
     echo "## hashes"
     find data results paper src python tools tests -type f \

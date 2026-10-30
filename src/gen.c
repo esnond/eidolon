@@ -43,6 +43,17 @@ static double clip(double x, double lo, double hi)
     return x;
 }
 
+static double mask_scalar(const patient_t *pt)
+{
+    double sum = 0.0;
+    int k;
+
+    for (k = 0; k < N_PARAM; k += 1) {
+        sum += (pt->p[k] - PARAM_LO[k]) / (PARAM_HI[k] - PARAM_LO[k]);
+    }
+    return sum / (double)N_PARAM;
+}
+
 static void sample_natural_params(rng_t *r, double *p)
 {
     double g[3];
@@ -391,7 +402,12 @@ void emit_patient(FILE *out, const patient_t *pt, int pid, int days, int chaos,
     double rho = pt->p[21];
     double fib;
     int day;
+    patient_t mask;
+    int has_mask = (pt->group == 6 || pt->group == 7) ? 1 : 0;
 
+    if (has_mask) {
+        patient_init_intense(&mask, mask_scalar(pt), pt->group);
+    }
     for (day = 1; day <= days; day += 1) {
         int dow = ((day - 1) % 7) + 1;
         double chaos_mult = 1.0;
@@ -416,6 +432,14 @@ void emit_patient(FILE *out, const patient_t *pt, int pid, int days, int chaos,
         if (chaos) {
             chaos_mult = (day <= 30) ? 1.0 : (day <= 60 ? 1.5 : 2.2);
         }
-        emit_natural_day(out, pt, pid, day, dow, fib, chaos_mult, r);
+        if (has_mask && day <= 45) {
+            emit_natural_day(out, pt, pid, day, dow, fib, chaos_mult, r);
+        } else if (has_mask && pt->group == 6) {
+            emit_intense_day(out, &mask, pid, day, dow);
+        } else if (has_mask) {
+            emit_natural_day(out, &mask, pid, day, dow, fib, 1.0, r);
+        } else {
+            emit_natural_day(out, pt, pid, day, dow, fib, chaos_mult, r);
+        }
     }
 }

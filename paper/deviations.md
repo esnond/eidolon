@@ -1,7 +1,7 @@
 # eidolon: отклонения от пререгистрации и post hoc решения
 
 registered_at: 2026-10-30T16:39:05Z
-analysis_completed: 2026-10-30T18:20:00Z
+analysis_completed: 2026-10-30T18:45:00Z
 
 исходный текст `hypotheses.md` не переписывался после запуска; в конец добавлены exploratory addenda. ниже перечислены все отклонения и решения, принятые после просмотра данных, с указанием статуса.
 
@@ -24,6 +24,7 @@ analysis_completed: 2026-10-30T18:20:00Z
 | d15 | четыре группы | добавлена exploratory g5: те же аффинные интенсивные параметры, натуральный стохастический эмиттер | exploratory | отделяет детерминированный эмиттер от интенсивности параметров |
 | d16 | h2 по среднему четырёх моделей | per-model patient-level тесты и matched 150-class sensitivity | correction | среднее скрывает противоположные знаки: logreg/MLP g2>g3, hgb g3>g2, rf tie |
 | d17 | collision ceiling 0.0967 | profile fraction 0.0967, plurality ceiling 0.3867 | correction | 0.0967 это оконная доля, а не потолок top1; rf/hgb top1 равен 0.3867 |
+| d18 | четыре группы | within-subject g6/g7: 200 natural, 200 deterministic switch, 200 stochastic switch | exploratory | причинная проверка на одном пациенте, дни 1-45 natural, 46-90 mask |
 
 ## post hoc анализы
 

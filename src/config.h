@@ -16,6 +16,8 @@
 #define DEFAULT_N3 150
 #define DEFAULT_N4 100
 #define DEFAULT_N5 0
+#define DEFAULT_N6 0
+#define DEFAULT_N7 0
 #define MIN_INTERVAL_MS 250
 #define MAX_INTERVAL_MS 600000
 #define MIN_DURATION_S 60

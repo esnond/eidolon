@@ -1,6 +1,6 @@
 # provenance
 
-version: 1.1.0
+version: 1.2.0
 date: 2026-10-30
 
 ## what is verified
@@ -40,6 +40,6 @@ date: 2026-10-30
 
 ## release
 
-- `release/eidolon-v1.1.0.tar.gz` excludes `refs/`, object files, the compiled
+- `release/eidolon-v1.2.0.tar.gz` excludes `refs/`, object files, the compiled
   binary and the release directory itself. build with `make`.
 - `results/manifest.txt` is generated after the release inputs are frozen.

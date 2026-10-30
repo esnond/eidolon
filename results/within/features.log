@@ -1,0 +1,32 @@
+/home/esnond/echo/python/eidolon_features.py:120: RuntimeWarning: Precision loss occurred in moment calculation due to catastrophic cancellation. This occurs when the data are nearly identical. Results may be unreliable.
+  iskew = float(skew(liv))
+{
+  "rows": 1963107,
+  "patients": 600,
+  "windows": 5400,
+  "groups": {
+    "1": 200,
+    "6": 200,
+    "7": 200
+  },
+  "rank1": {
+    "1": {
+      "participation_ratio": 10.815669794150155,
+      "lambda1_share": 0.19034193768743762,
+      "n_windows": 1800,
+      "n_features": 51
+    },
+    "6": {
+      "participation_ratio": 1.4683938428154764,
+      "lambda1_share": 0.8106597560750785,
+      "n_windows": 1800,
+      "n_features": 51
+    },
+    "7": {
+      "participation_ratio": 9.3950771861412,
+      "lambda1_share": 0.22153522414038238,
+      "n_windows": 1800,
+      "n_features": 51
+    }
+  }
+}

@@ -48,7 +48,7 @@ int main(int argc, char **argv)
     uint64_t seed = DEFAULT_SEED;
     const char *out_path = "data/cohort.csv";
     int days = DEFAULT_DAYS;
-    int counts[5] = {DEFAULT_N1, DEFAULT_N2, DEFAULT_N3, DEFAULT_N4, DEFAULT_N5};
+    int counts[7] = {DEFAULT_N1, DEFAULT_N2, DEFAULT_N3, DEFAULT_N4, DEFAULT_N5, DEFAULT_N6, DEFAULT_N7};
     int chaos = 0;
     int i;
     int pid = 0;
@@ -102,6 +102,18 @@ int main(int argc, char **argv)
                 return 2;
             }
             i += 1;
+        } else if (strcmp(argv[i], "--n6") == 0 && i + 1 < argc) {
+            if (!parse_int(argv[i + 1], 0, 10000, &counts[5])) {
+                usage(argv[0]);
+                return 2;
+            }
+            i += 1;
+        } else if (strcmp(argv[i], "--n7") == 0 && i + 1 < argc) {
+            if (!parse_int(argv[i + 1], 0, 10000, &counts[6])) {
+                usage(argv[0]);
+                return 2;
+            }
+            i += 1;
         } else if (strcmp(argv[i], "--chaos") == 0) {
             chaos = 1;
         } else {
@@ -117,7 +129,7 @@ int main(int argc, char **argv)
     setvbuf(out, NULL, _IOFBF, 1 << 20);
     fputs(CSV_HEADER, out);
     rng_seed(&rng, seed);
-    for (g = 0; g < 5; g += 1) {
+    for (g = 0; g < 7; g += 1) {
         for (i = 0; i < counts[g]; i += 1) {
             patient_t pt;
             if (g == 0) {
@@ -131,9 +143,12 @@ int main(int argc, char **argv)
                 memset(&pt, 0, sizeof(pt));
                 pt.p[21] = 0.5;
                 pt.group = 4;
-            } else {
+            } else if (g == 4) {
                 double s = ((double)i + 0.5) / (double)counts[4];
                 patient_init_intense(&pt, s, 5);
+            } else {
+                patient_init_natural(&rng, &pt);
+                pt.group = g + 1;
             }
             emit_patient(out, &pt, pid, days, chaos, &rng);
             pid += 1;

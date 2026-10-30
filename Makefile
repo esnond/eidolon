@@ -32,6 +32,10 @@ data/g5.csv: $(BIN) seed.stamp
 	mkdir -p data
 	./$(BIN) --seed $(SEED) --out $@ --n1 200 --n2 150 --n3 150 --n4 100 --n5 150
 
+data/within.csv: $(BIN) seed.stamp
+	mkdir -p data
+	./$(BIN) --seed $(SEED) --out $@ --n1 200 --n2 0 --n3 0 --n4 0 --n5 0 --n6 200 --n7 200
+
 sanitize:
 	$(CC) -std=c99 -pedantic -Wall -Wextra -Werror -O1 -g \
 		-fsanitize=address,undefined -ffp-contract=off \
@@ -50,10 +54,10 @@ check: $(BIN)
 	sh tools/check_determinism.sh ./$(BIN) $(SEED) --against-published
 	sh tools/check_g5.sh ./$(BIN) $(SEED)
 
-manifest: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv check
+manifest: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv check
 	sh tools/generate_manifest.sh $(SEED)
 
-analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv
+analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv data/within.csv
 	$(PY) python/eidolon_features.py --csv data/cohort.csv --out-dir results
 	$(PY) python/eidolon_models.py --groups 1,2,3,4 --models dummy,logreg,rf,hgb,mlp
 	$(PY) python/eidolon_forecast.py --cohort data/cohort.csv --chaos data/chaos.csv --out-dir results
@@ -63,8 +67,11 @@ analysis: $(BIN) data/cohort.csv data/chaos.csv data/g5.csv
 	$(PY) python/eidolon_models.py --features results/g5/features.csv --out-dir results/g5 --groups 1,5 --models dummy,logreg,rf,hgb,mlp
 	$(PY) python/eidolon_corrections.py
 	$(PY) python/eidolon_matched.py
+	$(PY) python/eidolon_features.py --csv data/within.csv --out-dir results/within
+	$(PY) python/eidolon_within.py
 	$(PY) python/eidolon_plots.py
 	$(PY) python/eidolon_g5_plot.py
+	$(PY) python/eidolon_within_plot.py
 	sh tools/generate_manifest.sh $(SEED)
 
 release: manifest

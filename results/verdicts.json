@@ -1,6 +1,6 @@
 {
   "registered_at": "2026-10-30T16:39:05Z",
-  "analysis_completed": "2026-10-30T18:20:00Z",
+  "analysis_completed": "2026-10-30T18:45:00Z",
   "summary": "\u0441\u043c\u0435\u0448\u0430\u043d\u043d\u044b\u0439 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442: \u043c\u0430\u0441\u043a\u0438\u0440\u043e\u0432\u043a\u0430 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u0434\u0430\u043b\u0451\u043d\u043d\u043e\u0441\u0442\u044c \u043e\u0442 \u0435\u0441\u0442\u0435\u0441\u0442\u0432\u0435\u043d\u043d\u043e\u0433\u043e \u043c\u043d\u043e\u0433\u043e\u043e\u0431\u0440\u0430\u0437\u0438\u044f \u0438 \u0441\u043d\u0438\u0436\u0430\u0435\u0442 \u0438\u043d\u0434\u0438\u0432\u0438\u0434\u0443\u0430\u043b\u044c\u043d\u0443\u044e \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u0443\u0435\u043c\u043e\u0441\u0442\u044c, \u043d\u043e \u043d\u0435 \u043f\u043e\u0432\u044b\u0448\u0430\u0435\u0442 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0432\u043d\u0443\u0442\u0440\u0438 \u043a\u043e\u0433\u043e\u0440\u0442\u044b; g3 \u043a\u043e\u043b\u043b\u0430\u043f\u0441\u0438\u0440\u0443\u0435\u0442 \u0432 58 \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432, \u0430 \u043d\u0435 \u0432 \u0443\u043d\u0438\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u043f\u0440\u043e\u0444\u0438\u043b\u0438",
   "hypotheses": {
     "h1": {
@@ -220,7 +220,8 @@
     "g3 is perfectly separable from g1 by a single regularity feature; this is a threshold, not a unique signature",
     "g3 collapses into 58 profiles over 600 test windows; the patient-level exact-profile ceiling is 0.3867 and rf/hgb top1 equals it",
     "within g1 uniqueness is positively associated with identifiability, rho 0.275-0.387, small effect",
-    "g5 with the same intense parameters and a natural stochastic emitter has 600 of 600 unique profiles and rf top1 0.100"
+    "g5 with the same intense parameters and a natural stochastic emitter has 600 of 600 unique profiles and rf top1 0.100",
+    "within-subject: natural control rf top1 0.751, deterministic mask 0.005, stochastic mask 0.004 at chance 0.005; masking destroys individual identity, not enhances it"
   ],
   "unsafe_claims": [
     "intense masking creates a rank-1 anomalous and simultaneously unique profile",
@@ -230,7 +231,8 @@
     "g4 proves the absence of overfitting: rf 0.025 on the primary seed, 0.0075 on the second",
     "the forecast demonstrates a long-horizon prediction limit: within-patient r2 is negative",
     "the 500-candidate accuracy from the protocol applies to the per-group 150-200 class task",
-    "the deterministic g3 result generalizes to stochastic masking"
+    "the deterministic g3 result generalizes to stochastic masking",
+    "masking increases individual identifiability or preserves a unique signature across the switch"
   ],
   "artifacts": {
     "determinism_sha256": "7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9",
@@ -273,5 +275,55 @@
     "g3_profile_fraction": 0.0967,
     "g3_plurality_ceiling": 0.3867,
     "note": "0.0967 is a window-level profile fraction, not the top1 bound. the patient-level exact-profile bound is 58/150=0.3867, equal to rf and hgb top1."
+  },
+  "within_subject": {
+    "status": "exploratory causal check, not preregistered",
+    "design": "same patient natural days 1-45, masked days 46-90; train windows 1-4, test 6-9; 200 classes; chance 0.005",
+    "g1_natural": {
+      "drift": 2.238,
+      "drift_ci95": [
+        2.173,
+        2.303
+      ],
+      "rf_top1": 0.751,
+      "rf_ci95": [
+        0.711,
+        0.789
+      ],
+      "logreg_top1": 0.728
+    },
+    "g6_deterministic": {
+      "drift": 18.372,
+      "drift_ci95": [
+        18.25,
+        18.487
+      ],
+      "rf_top1": 0.005,
+      "rf_ci95": [
+        0.0,
+        0.015
+      ],
+      "logreg_top1": 0.0,
+      "idu_nat_post": 16.24,
+      "idu_cohort_post": 0.026,
+      "anomaly_auc_vs_g1": 1.0
+    },
+    "g7_stochastic": {
+      "drift": 3.989,
+      "drift_ci95": [
+        3.869,
+        4.119
+      ],
+      "rf_top1": 0.004,
+      "rf_ci95": [
+        0.0,
+        0.009
+      ],
+      "logreg_top1": 0.01,
+      "idu_nat_post": 3.257,
+      "idu_cohort_post": 2.611,
+      "anomaly_auc_vs_g1": 0.067
+    },
+    "interpretation": "the same person is not re-identified after either mask; deterministic mask replaces identity with a template, stochastic mask creates a different natural-like profile. this is a causal argument against the strong paradox."
   }
 }

@@ -14,7 +14,7 @@
 |---|---|
 | `src/` | c99 генератор, xorshift64*, без внешних зависимостей |
 | `python/` | признаки, idu, модели, прогноз, статистика, графики |
-| `data/` | cohort.csv, chaos.csv, g5.csv, seed2/cohort.csv |
+| `data/` | cohort.csv, chaos.csv, g5.csv, within.csv, seed2/cohort.csv |
 | `results/` | таблицы, json, графики, manifest |
 | `paper/` | препринт и отклонения |
 | `refs/` | исходные документы проекта |
@@ -26,6 +26,7 @@ make
 ./eidolon_gen --seed 20261030 --out data/cohort.csv
 ./eidolon_gen --seed 20261030 --out data/chaos.csv --chaos --n1 100 --n2 0 --n3 0 --n4 0
 ./eidolon_gen --seed 20261030 --out data/g5.csv --n1 200 --n2 150 --n3 150 --n4 100 --n5 150
+./eidolon_gen --seed 20261030 --out data/within.csv --n1 200 --n2 0 --n3 0 --n4 0 --n5 0 --n6 200 --n7 200
 ```
 
 флаги: `-std=c99 -pedantic -Wall -Wextra -Werror -O2 -ffp-contract=off`. линковка: `-lm`. санитайзеры: `make test` (asan и ubsan, ld_preload очищается).
@@ -41,7 +42,7 @@ patient_id,group,day,t_s,action_seq,interval_ms,session_dur_s,action_id,section_
 | колонка | единица | смысл |
 |---|---|---|
 | patient_id | id | 0..599 |
-| group | 1..5 | 1 natural, 2 moderate, 3 intense deterministic, 4 daily re-randomized, 5 stochastic intense |
+| group | 1..7 | 1 natural, 2 moderate, 3 intense deterministic, 4 daily re-randomized, 5 stochastic intense, 6 deterministic switch, 7 stochastic switch |
 | day | день | 1..90 |
 | t_s | секунда суток | 0..86399 |
 | action_seq | номер | позиция события в сессии, 1..n |
@@ -63,6 +64,8 @@ patient_id,group,day,t_s,action_seq,interval_ms,session_dur_s,action_id,section_
 | g3 intense | 150 | 24 параметра аффинны одному s, событийный поток детерминирован и квантован, без rng |
 | g4 random | 100 | ежедневная повторная выборка натуральных параметров, без устойчивой идентичности |
 | g5 stochastic intense | 150 | те же 24 аффинных параметра, что у g3, но натуральный стохастический эмиттер; exploratory, отдельный файл |
+| g6 deterministic switch | 200 | дни 1-45 natural, дни 46-90 детерминированная маска g3; within-subject, отдельный файл |
+| g7 stochastic switch | 200 | дни 1-45 natural, дни 46-90 стохастическая маска; within-subject, отдельный файл |
 
 исходный протокол содержит 500 в одном разделе и суммы 200+150+150+100=600 в другом. принято 600 по детальным размерам групп; конфликт зафиксирован в `hypotheses.md` и `paper/deviations.md`.
 
@@ -80,8 +83,11 @@ python3 python/eidolon_stats.py
 python3 python/eidolon_robustness.py
 python3 python/eidolon_corrections.py
 python3 python/eidolon_matched.py
+python3 python/eidolon_features.py --csv data/within.csv --out-dir results/within
+python3 python/eidolon_within.py
 python3 python/eidolon_plots.py
 python3 python/eidolon_g5_plot.py
+python3 python/eidolon_within_plot.py
 python3 -m unittest discover -s tests
 ```
 
@@ -133,6 +139,7 @@ python3 python/eidolon_matched.py
 - g3: 58 профилей на 600 окон, profile fraction 0.0967, plurality ceiling 0.3867; rf и hgb top1 равны 0.3867, то есть остаточного индивидуального сигнала выше точного шаблона нет.
 - pytorch не использован; нейросеть это sklearn MLPClassifier. окружение зафиксировано в requirements.txt.
 - основной сид 20261030, репликация 20261031 для logreg и rf; g3 инвариантен к сиду.
+- within-subject: natural control rf top1 0.751, детерминированная маска 0.005, стохастическая 0.004 при chance 0.005; drift 2.238 / 18.372 / 3.989. это причинный аргумент, но только для двух синтетических масок.
 
 ## лицензия и данные
 

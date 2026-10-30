@@ -30,7 +30,9 @@
 | `corrections.json` | per-model g2/g3, plurality ceiling, g5 сравнение |
 | `matched.json` | matched 150-class sensitivity, выбор primary classifier |
 | `g5/` | признаки, модели и метрики стохастической интенсивной группы |
+| `within/` | within-subject features, models, drift, predictions |
 | `figures/fig7_g5.png` | g3 против g5: idu_nat и top1 |
+| `figures/fig8_within.png` | within-subject drift и identification |
 | `manifest.txt` | sha256, компилятор, cflags, сид, окружение, determinism |
 | `figures/` | шесть png с ci95, где применимо |
 

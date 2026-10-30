@@ -244,8 +244,10 @@ def compute_idu(feats, out_dir):
         n_windows=("window", "size"))
     patient.to_csv(os.path.join(out_dir, "patient_metrics.csv"), index=False)
     ranks = {}
-    for grp in (1, 2, 3, 4, 5):
+    for grp in (1, 2, 3, 4, 5, 6, 7):
         mask = (feats["group"] == grp).to_numpy()
+        if mask.sum() < 2:
+            continue
         p = PCA(n_components=min(20, mask.sum() - 1), random_state=42).fit(zs[mask])
         ev = p.explained_variance_ratio_
         ranks[str(grp)] = {
