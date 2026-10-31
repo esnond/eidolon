@@ -10,10 +10,7 @@
         color: #8a7f96;
     }
     @top-right {
-        content: string(section);
-        font-family: "PT Sans";
-        font-size: 7pt;
-        color: #8a7f96;
+        content: none;
     }
     @bottom-left {
         content: "eidolon · отчёт для научного руководителя · 2026-10-31";
@@ -58,6 +55,7 @@ p {
     margin: 0 0 2.3mm;
     text-align: justify;
     hyphens: auto;
+    hyphenate-limit-chars: 11 5 5;
     orphans: 3;
     widows: 3;
     overflow-wrap: break-word;
@@ -93,6 +91,19 @@ pre {
     margin: 3mm 0 4mm;
 }
 
+
+pre.contract {
+    font-size: 7.1pt;
+    line-height: 1.5;
+    background: #f7f4fb;
+    border: 0.4pt solid #e2d9ec;
+    border-radius: 1.5mm;
+    padding: 2.5mm 3mm;
+    margin: 2mm 0 3.5mm;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
 pre code {
     background: none;
     padding: 0;
@@ -111,7 +122,6 @@ h1 {
     break-before: page;
     break-after: avoid;
     bookmark-level: 1;
-    string-set: section content(text);
 }
 
 h2 {
@@ -168,35 +178,19 @@ a {
 
 .cover {
     page: cover;
-    height: 297mm;
     padding: 21mm 20mm 17mm;
-    box-sizing: border-box;
     color: #f7f3fb;
     position: relative;
     overflow: hidden;
     break-after: page;
 }
 
-.cover-layout {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.cover-layout td {
-    padding: 0;
-    vertical-align: top;
-}
-
-.cover-topcell {
-    height: 8mm;
-    font-family: "PT Sans";
-    font-size: 8pt;
-    color: #c9b8e0;
-}
-
 .cover-topline {
     width: 100%;
     border-collapse: collapse;
+    font-family: "PT Sans";
+    font-size: 8pt;
+    color: #c9b8e0;
 }
 
 .cover-topline td {
@@ -207,14 +201,12 @@ a {
     text-align: right;
 }
 
-.cover-maincell {
-    height: 208mm;
-    vertical-align: middle;
+.cover-main {
+    margin-top: 38mm;
 }
 
-.cover-footcell {
-    height: 40mm;
-    vertical-align: bottom;
+.cover-foot {
+    margin-top: 52mm;
     font-family: "PT Sans";
     font-size: 7.6pt;
     line-height: 1.6;
@@ -263,6 +255,7 @@ a {
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 5mm;
+    break-before: avoid;
     bookmark-level: none;
 }
 
@@ -361,7 +354,6 @@ a {
     border: none;
     break-before: avoid;
     bookmark-level: 1;
-    string-set: section "аннотация";
 }
 
 .paper-sub {

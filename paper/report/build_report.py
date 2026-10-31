@@ -129,11 +129,11 @@ STATUS_ROWS = [
     ("детерминированная маска не уникальна", "подтверждено", "idu_cohort 0.065, 58 профилей, потолок 0.3867", "синтетика", "ok"),
     ("сильный парадокс rank-1 уникальности", "опровергнуто", "pr 2.380, lambda1 0.500", "для g3 при равномерном s", "no"),
     ("g2 против g3 монотонно", "не установлено", "per-model p расходятся, rf tie", "классы и модели различаются", "mid"),
-    ("маска уничтожает идентичность", "опровергнуто в сильной форме", "pre-to-post 0.005, post-only g6 0.085", "перенос сломан, информация остаётся", "no"),
-    ("стохастическая маска скрывает личность", "подтверждено в маскированной области", "open-set eer 0.455 против 0.497 у g4", "маска обнаружима по action_entropy", "ok"),
+    ("маска уничтожает идентичность", "опровергнуто", "pre-to-post 0.005, post-only g6 0.085", "сильная форма; перенос сломан, информация остаётся", "no"),
+    ("стохастическая маска скрывает личность", "подтверждено", "open-set eer 0.455 против 0.497 у g4", "в маскированной области; маска обнаружима по action_entropy", "ok"),
     ("прогноз ограничен горизонтом", "не поддержано", "0.496 против 0.481, p=0.172, r2 отрицательный", "underpowered", "mid"),
     ("g4 контроль на уровне шанса", "неопределённо", "0.025 и 0.0075 на двух сидах", "один сид выше порога", "gray"),
-    ("уникальность предсказывает идентификацию", "поисковый, слабый эффект", "consensus 0.275, per-model 0.167-0.211", "малый эффект", "info"),
+    ("уникальность предсказывает идентификацию", "поисковый", "consensus 0.275, per-model 0.167-0.211", "слабый и нестабильный эффект", "info"),
     ("артефакт воспроизводим", "локально подтверждено", "sha256, manifest, tests", "локальный compiler и libm, без doi", "ok"),
 ]
 
@@ -154,6 +154,7 @@ TABLES = [
     ("5", "прогноз next-day, accuracy = 1 - mae/mean."),
     ("6", "top 10 permutation importance для g1."),
     ("7", "вердикты h1..h7."),
+    ("7b", "open-set verification, auc и eer."),
     ("8", "within-subject switch."),
     ("9", "артефакты и их содержание."),
 ]
@@ -284,33 +285,29 @@ def toc_html(tokens: list[dict]) -> str:
 def cover_html() -> str:
     return """
 <section class="cover">
-  <table class="cover-layout">
-    <tr><td class="cover-topcell">
-      <table class="cover-topline"><tr>
-        <td><span class="cover-mark">eidolon</span></td>
-        <td class="right">исследовательский артефакт · ревизия 1</td>
-      </tr></table>
-    </td></tr>
-    <tr><td class="cover-maincell">
-      <p class="cover-kicker">отчёт для научного руководителя</p>
-      <h1 class="cover-title">аномальность<br>без уникальности</h1>
-      <p class="cover-sub">детерминированная маскировка в синтетической когорте 600 пациентов: генератор, измерения, отрицательные результаты и границы воспроизводимости</p>
-      <div class="cover-rule"></div>
-      <table class="cover-stats">
-        <tr>
-          <td><div class="cover-num">600</div><div class="cover-label">виртуальных пациентов</div></td>
-          <td><div class="cover-num">90</div><div class="cover-label">дней наблюдения</div></td>
-          <td><div class="cover-num">1 991 067</div><div class="cover-label">событий</div></td>
-          <td><div class="cover-num">51</div><div class="cover-label">поведенческий признак</div></td>
-        </tr>
-      </table>
-    </td></tr>
-    <tr><td class="cover-footcell">
-      <div><b>31 октября 2026</b> · проект eidolon · preprint draft, not peer reviewed</div>
-      <div>sha256 основной когорты: <span style="font-family:'PT Mono';font-size:6.8pt">7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></div>
-      <div>подготовлено при участии ии; декларация и границы воспроизводимости внутри</div>
-    </td></tr>
-  </table>
+  <table class="cover-topline"><tr>
+    <td><span class="cover-mark">eidolon</span></td>
+    <td class="right">исследовательский артефакт · ревизия 1</td>
+  </tr></table>
+  <div class="cover-main">
+    <p class="cover-kicker">отчёт для научного руководителя</p>
+    <h1 class="cover-title">аномальность<br>без уникальности</h1>
+    <p class="cover-sub">детерминированная маскировка в синтетической когорте 600 пациентов: генератор, измерения, отрицательные результаты и границы воспроизводимости</p>
+    <div class="cover-rule"></div>
+    <table class="cover-stats">
+      <tr>
+        <td><div class="cover-num">600</div><div class="cover-label">виртуальных пациентов</div></td>
+        <td><div class="cover-num">90</div><div class="cover-label">дней наблюдения</div></td>
+        <td><div class="cover-num">1 991 067</div><div class="cover-label">событий</div></td>
+        <td><div class="cover-num">51</div><div class="cover-label">поведенческий признак</div></td>
+      </tr>
+    </table>
+  </div>
+  <div class="cover-foot">
+    <div><b>31 октября 2026</b> · проект eidolon · preprint draft, not peer reviewed</div>
+    <div>sha256 основной когорты: <span style="font-family:'PT Mono';font-size:6.8pt">7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></div>
+    <div>подготовлено при участии ии; декларация и границы воспроизводимости внутри</div>
+  </div>
 </section>
 """
 
@@ -319,7 +316,7 @@ def summary_html() -> str:
     return """
 <section class="frontpage">
   <h1 class="front-title">резюме для научного руководителя</h1>
-  <p class="front-lead">отчёт фиксирует проверку гипотезы о парадоксе детерминированной анонимности в синтетической когорте 600 виртуальных пациентов. работа доведена до воспроизводимого артефакта: генератор на c99, 51 признак, пять моделей, восемь рисунков, десять таблиц, манифест и гейты. сильная гипотеза не подтверждена. подтверждена более узкая формулировка: детерминированная маскировка делает профиль аномальным и легко обнаружимым, но не уникальным.</p>
+  <p class="front-lead">отчёт фиксирует проверку гипотезы о парадоксе детерминированной анонимности в синтетической когорте 600 виртуальных пациентов. работа доведена до воспроизводимого артефакта: генератор на c99, 51 признак, пять моделей, восемь рисунков, одиннадцать таблиц, манифест и гейты. сильная гипотеза не подтверждена. подтверждена более узкая формулировка: детерминированная маскировка делает профиль аномальным и легко обнаружимым, но не уникальным.</p>
 
   <table class="cards">
     <tr>
@@ -388,15 +385,15 @@ def status_html() -> str:
 def provenance_html() -> str:
     return """
 <section class="frontpage">
-  <h1 class="front-title">провенанс, границы и декларация об использовании ии</h1>
+  <h1 class="front-title">провенанс, границы, декларация об ии</h1>
 
   <h3 style="margin-top:1mm">провенанс артефакта</h3>
   <table class="prov">
-    <tr><td>коммит</td><td><span class="mono">a307c68</span> (рабочее дерево поверх него; скрипт отчёта не входит в тег)</td></tr>
+    <tr><td>коммит</td><td><span class="mono">a307c68</span> плюс рабочее дерево: правки подписей таблиц 7b и 8, легенды рисунка 6 и сборки pdf; числа и данные не менялись</td></tr>
     <tr><td>тег</td><td><span class="mono">v1.3.0</span> на коммите <span class="mono">a13a256</span></td></tr>
     <tr><td>бинарник</td><td><span class="mono">sha256 04449ca1fe428c686a877a90c96026378add130da17b350b0c0ae86f312cc569</span></td></tr>
     <tr><td>когорта</td><td><span class="mono">sha256 7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></td></tr>
-    <tr><td>манифест</td><td><span class="mono">results/manifest.txt</span>, 157 строк, сгенерирован 2026-10-30T22:02:08Z</td></tr>
+    <tr><td>манифест</td><td><span class="mono">results/manifest.txt</span>, 165 строк, сгенерирован 2026-10-31T00:54:26Z; <span class="mono">paper/report/</span> исключён как производная вёрстка</td></tr>
     <tr><td>релиз</td><td><span class="mono">release/eidolon-v1.3.0.tar.gz</span>, <span class="mono">sha256 7127db326c2503de8057d1bf874917473a8e056ae8528acc23464dff8d12483d</span>; собран до файлов воркфлоу статьи, pdf в него не входит</td></tr>
     <tr><td>гейты</td><td><span class="mono">make check</span>: DETERMINISM_PASS, G5_ISOLATION_PASS; <span class="mono">make paper</span>: PAPER_GATE_PASS, 2 файла, 18 чисел, 5 статусов</td></tr>
   </table>
@@ -414,7 +411,7 @@ def provenance_html() -> str:
   <table class="status-table">
     <thead><tr><th>кто</th><th>что сделал</th></tr></thead>
     <tbody>
-      <tr><td>ии-агенты</td><td>генератор на c99, пайплайн признаков, моделей, прогноза и статистики, тесты, инструменты сборки; прогон всех измерений; драфт препринта; два круга adversarial review и методологический аудит, которые привели к опровержению сильной гипотезы.</td></tr>
+      <tr><td>агенты</td><td>генератор на c99, пайплайн признаков, моделей, прогноза и статистики, тесты, инструменты сборки; прогон всех измерений; драфт препринта; два круга adversarial review и методологический аудит, которые привели к опровержению сильной гипотезы.</td></tr>
       <tr><td>человек</td><td>постановка задачи, исходная гипотеза и исходные документы, размеры групп, сиды, приёмка или отклонение каждой ревизии, ответственность за весь контент.</td></tr>
       <tr><td>ии не делал</td><td>не работал с реальными пациентами и персональными данными, не выбирал пороги post hoc ради желаемого знака, не удалял неудобные результаты.</td></tr>
     </tbody>
@@ -547,6 +544,16 @@ def wrap_tables(body: str) -> str:
     return pattern.sub(repl, body)
 
 
+def fix_csv_contract(body: str) -> str:
+    pattern = re.compile(r"<code>(patient_id,group,.*?)</code>", re.S)
+
+    def repl(match: re.Match) -> str:
+        text = match.group(1).replace(",", ",<wbr>")
+        return f'<pre class="contract">{text}</pre>'
+
+    return pattern.sub(repl, body, count=1)
+
+
 def build_html() -> tuple[str, str]:
     ensure_fonts()
     eqs = render_equations()
@@ -559,6 +566,7 @@ def build_html() -> tuple[str, str]:
     body = rewrite_images(body)
     body = wrap_figures(body)
     body = wrap_tables(body)
+    body = fix_csv_contract(body)
 
     css = font_css() + "\n" + (REPORT / "style.css").read_text(encoding="utf-8")
 

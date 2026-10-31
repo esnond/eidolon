@@ -311,6 +311,8 @@ rank-1: на pre/post смеси g6 даёт participation ratio 1.553 и lambda
 
 closed-set top1 отвечает на вопрос "кто из n пациентов это", но не на вопрос "новый это пациент или известный". open-set verification на парах окон: same-patient против different-patient, евклидово расстояние в стандартизованном 20-компонентном whitened pca пространстве, обученном на g1.
 
+**таблица 7b. open-set verification, auc и eer.**
+
 | группа | auc [ci95] | eer [ci95] |
 |---|---|---|
 | g1 | 0.894 [0.878, 0.909] | 0.178 [0.163, 0.195] |

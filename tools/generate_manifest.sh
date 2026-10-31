@@ -45,7 +45,7 @@ PY
     find data results paper src python tools tests -type f \
         \( -name '*.csv' -o -name '*.json' -o -name '*.png' -o -name '*.md' \
         -o -name '*.py' -o -name '*.c' -o -name '*.h' -o -name '*.sh' \) \
-        ! -name 'manifest.txt' -print0 2>/dev/null \
+        ! -name 'manifest.txt' ! -path 'paper/report/*' -print0 2>/dev/null \
         | sort -z | xargs -0 sha256sum
     sha256sum Makefile hypotheses.md README.md requirements.txt VERSION LICENSE LICENSE-CC-BY-4.0 NOTICE CITATION.cff PROVENANCE.md 2>/dev/null || true
 } > "$OUT"

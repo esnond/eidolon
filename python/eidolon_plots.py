@@ -182,7 +182,8 @@ def fig6(pm, stats):
     ax.set_ylabel("true positive rate")
     ax.set_xlim(0, 1)
     ax.set_ylim(0, 1.01)
-    ax.legend(fontsize=7, frameon=False, loc="lower right")
+    ax.legend(fontsize=7, frameon=True, facecolor="white", edgecolor="none",
+              framealpha=0.95, loc="lower right")
     ax.grid(alpha=0.25, lw=0.5)
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "fig6_anomaly_roc.png"), dpi=220)
