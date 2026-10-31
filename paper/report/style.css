@@ -1,0 +1,818 @@
+/* шрифты вставляются генератором перед этим файлом */
+
+@page {
+    size: a4;
+    margin: 21mm 18mm 18mm 18mm;
+    @top-left {
+        content: "аномальность без уникальности";
+        font-family: "PT Sans";
+        font-size: 7pt;
+        color: #8a7f96;
+    }
+    @top-right {
+        content: string(section);
+        font-family: "PT Sans";
+        font-size: 7pt;
+        color: #8a7f96;
+    }
+    @bottom-left {
+        content: "eidolon · отчёт для научного руководителя · 2026-10-31";
+        font-family: "PT Sans";
+        font-size: 6.8pt;
+        color: #8a7f96;
+    }
+    @bottom-right {
+        content: counter(page) " / " counter(pages);
+        font-family: "PT Sans";
+        font-size: 7pt;
+        color: #6b6474;
+    }
+}
+
+@page cover {
+    margin: 0;
+    background: linear-gradient(145deg, #170e25 0%, #2b1945 55%, #3b2559 100%);
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
+}
+
+@page front {
+    @top-left { content: "eidolon · служебная часть"; }
+    @top-right { content: none; }
+}
+
+html {
+    font-family: "PT Serif";
+    font-size: 10.1pt;
+    line-height: 1.52;
+    color: #1d1a22;
+}
+
+body {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 2.3mm;
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+    overflow-wrap: break-word;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em {
+    font-style: italic;
+}
+
+code {
+    font-family: "PT Mono";
+    font-size: 8.3pt;
+    background: #f2eef7;
+    padding: 0.1mm 0.9mm;
+    border-radius: 1mm;
+    overflow-wrap: break-word;
+}
+
+pre {
+    font-family: "PT Mono";
+    font-size: 7.5pt;
+    line-height: 1.38;
+    background: #f7f4fb;
+    border: 0.4pt solid #e2d9ec;
+    border-radius: 1.5mm;
+    padding: 3mm 3.5mm;
+    white-space: pre-wrap;
+    break-inside: avoid;
+    margin: 3mm 0 4mm;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    font-size: 7.5pt;
+}
+
+h1 {
+    font-family: "PT Sans";
+    font-size: 19pt;
+    line-height: 1.18;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin: 0 0 4.5mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 0.7pt solid #d8cee5;
+    break-before: page;
+    break-after: avoid;
+    bookmark-level: 1;
+    string-set: section content(text);
+}
+
+h2 {
+    font-family: "PT Sans";
+    font-size: 12.8pt;
+    line-height: 1.25;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin: 6.5mm 0 2.4mm;
+    break-after: avoid;
+    bookmark-level: 2;
+}
+
+h3 {
+    font-family: "PT Sans";
+    font-size: 10.6pt;
+    line-height: 1.3;
+    font-weight: 700;
+    color: #2f2438;
+    margin: 4.6mm 0 1.8mm;
+    break-after: avoid;
+    bookmark-level: 3;
+}
+
+h4 {
+    font-family: "PT Sans";
+    font-size: 9.6pt;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin: 3.5mm 0 1.4mm;
+    break-after: avoid;
+}
+
+ul,
+ol {
+    margin: 0 0 2.6mm;
+    padding-left: 5.5mm;
+}
+
+li {
+    margin-bottom: 1.1mm;
+    text-align: justify;
+    hyphens: auto;
+}
+
+li::marker {
+    color: #6b4a8f;
+}
+
+a {
+    color: #4a2c6d;
+    text-decoration: none;
+}
+
+.cover {
+    page: cover;
+    height: 297mm;
+    padding: 0;
+    box-sizing: border-box;
+    color: #f7f3fb;
+    position: relative;
+    overflow: hidden;
+    break-after: page;
+}
+
+.cover-top {
+    position: absolute;
+    top: 21mm;
+    left: 20mm;
+    right: 20mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: "PT Sans";
+    font-size: 8pt;
+    color: #c9b8e0;
+}
+
+.cover-main {
+    position: absolute;
+    top: 72mm;
+    left: 20mm;
+    right: 20mm;
+}
+
+.cover-foot {
+    position: absolute;
+    bottom: 17mm;
+    left: 20mm;
+    right: 20mm;
+    font-family: "PT Sans";
+    font-size: 7.6pt;
+    line-height: 1.6;
+    color: #b9a6d4;
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    width: 150mm;
+    height: 150mm;
+    border: 0.5pt solid rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+    right: -55mm;
+    top: -30mm;
+}
+
+.cover::after {
+    content: "";
+    position: absolute;
+    width: 95mm;
+    height: 95mm;
+    border: 0.5pt solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    left: -40mm;
+    bottom: 35mm;
+}
+
+.cover-mark {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.6pt;
+}
+
+.cover-kicker {
+    font-family: "PT Sans";
+    font-size: 8.4pt;
+    color: #b9a6d4;
+    margin-bottom: 5mm;
+}
+
+.cover-title {
+    font-family: "PT Serif";
+    font-size: 40pt;
+    line-height: 1.02;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 5mm;
+    bookmark-level: none;
+}
+
+.cover-sub {
+    font-family: "PT Sans";
+    font-size: 12.5pt;
+    line-height: 1.42;
+    color: #e2d6f1;
+    max-width: 145mm;
+    margin: 0 0 10mm;
+}
+
+.cover-rule {
+    width: 34mm;
+    height: 1.2pt;
+    background: #b997e6;
+    margin-bottom: 10mm;
+}
+
+.cover-stats {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cover-stats td {
+    width: 25%;
+    padding: 4mm 4mm 0 0;
+    vertical-align: top;
+    border-top: 0.5pt solid rgba(255, 255, 255, 0.22);
+}
+
+.cover-num {
+    font-family: "PT Serif";
+    font-size: 18pt;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.cover-label {
+    font-family: "PT Sans";
+    font-size: 7.2pt;
+    color: #b9a6d4;
+    margin-top: 1.2mm;
+}
+
+.cover-foot b {
+    color: #f0e8fa;
+    font-weight: 700;
+}
+
+.frontpage {
+    page: front;
+    break-after: page;
+}
+
+.front-title {
+    font-family: "PT Sans";
+    font-size: 20pt;
+    line-height: 1.2;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin: 0 0 4mm;
+    break-before: avoid;
+    bookmark-level: none;
+}
+
+.front-lead {
+    font-size: 10.3pt;
+    line-height: 1.5;
+    color: #2b2431;
+    margin-bottom: 4mm;
+}
+
+.paper-head {
+    margin-bottom: 7mm;
+    padding-bottom: 5mm;
+    border-bottom: 0.8pt solid #d8cee5;
+}
+
+.paper-kicker {
+    font-family: "PT Sans";
+    font-size: 7.8pt;
+    color: #8a7f96;
+    margin-bottom: 2.5mm;
+}
+
+.paper-title {
+    font-family: "PT Serif";
+    font-size: 25pt;
+    line-height: 1.12;
+    font-weight: 700;
+    color: #2f2438;
+    margin: 0 0 2.5mm;
+    padding: 0;
+    border: none;
+    break-before: avoid;
+    bookmark-level: 1;
+    string-set: section "аннотация";
+}
+
+.paper-sub {
+    font-family: "PT Sans";
+    font-size: 11pt;
+    line-height: 1.4;
+    color: #5d5668;
+    margin: 0 0 3mm;
+}
+
+.paper-meta {
+    font-family: "PT Sans";
+    font-size: 7.8pt;
+    color: #8a7f96;
+    margin: 0;
+}
+
+.cards {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 2mm 2mm;
+    margin: 1mm -2mm 2.5mm;
+}
+
+.cards td {
+    width: 33.33%;
+    vertical-align: top;
+    padding: 0;
+}
+
+.card {
+    background: #f5f1f9;
+    border: 0.5pt solid #e2d9ec;
+    border-radius: 2mm;
+    padding: 2.6mm 3mm;
+    min-height: 15.5mm;
+}
+
+.card-num {
+    font-family: "PT Serif";
+    font-size: 16pt;
+    font-weight: 700;
+    color: #4a2c6d;
+    line-height: 1.1;
+}
+
+.card-label {
+    font-family: "PT Sans";
+    font-size: 7.4pt;
+    line-height: 1.35;
+    color: #6b6474;
+    margin-top: 1.2mm;
+}
+
+.callout {
+    background: #f7f3fb;
+    border-left: 3pt solid #6b4a8f;
+    padding: 2.6mm 3.6mm;
+    margin: 2.8mm 0 3.2mm;
+    break-inside: avoid;
+    font-size: 9.3pt;
+    line-height: 1.48;
+}
+
+.callout p {
+    margin-bottom: 1.6mm;
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+.callout-title {
+    font-family: "PT Sans";
+    font-size: 8.4pt;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin-bottom: 1.4mm;
+}
+
+.callout.warn {
+    background: #fdf6f2;
+    border-left-color: #a24b2a;
+}
+
+.callout.warn .callout-title {
+    color: #7a3520;
+}
+
+.toc {
+    page: front;
+    break-after: page;
+}
+
+.toc h1,
+.toc h2 {
+    break-before: avoid;
+}
+
+.toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans";
+}
+
+.toc-list li {
+    margin: 0;
+    padding: 0.55mm 0;
+    text-align: left;
+}
+
+.toc-list a {
+    color: #1d1a22;
+}
+
+.toc-list a::after {
+    content: " " leader('.') " " target-counter(attr(href), page);
+    color: #6b6474;
+}
+
+.toc-list .lvl2 {
+    font-weight: 700;
+    font-size: 9pt;
+    margin-top: 1.4mm;
+}
+
+.toc-list .lvl3 {
+    font-size: 8.2pt;
+    color: #4f4858;
+    padding-left: 6mm;
+}
+
+.toc-list .lvl3 a {
+    color: #4f4858;
+}
+
+.lists {
+    page: front;
+    break-after: page;
+}
+
+.lists table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "PT Sans";
+    font-size: 8pt;
+}
+
+.lists td {
+    width: 50%;
+    vertical-align: top;
+    padding: 0 4mm 0 0;
+}
+
+.lists h3 {
+    margin-top: 0;
+    margin-bottom: 2.5mm;
+    font-size: 10pt;
+}
+
+.lists ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lists li {
+    margin-bottom: 1.3mm;
+    text-align: left;
+}
+
+.lists a {
+    color: #1d1a22;
+}
+
+.lists a::after {
+    content: " " leader('.') " " target-counter(attr(href), page);
+    color: #6b6474;
+}
+
+.lists .item-label {
+    color: #4a2c6d;
+    font-weight: 700;
+}
+
+.table-block {
+    margin: 3.5mm 0 5mm;
+    break-inside: avoid;
+}
+
+.table-block.wide {
+    break-inside: auto;
+}
+
+.table-caption {
+    font-family: "PT Sans";
+    font-size: 8.2pt;
+    font-weight: 700;
+    color: #4a2c6d;
+    margin: 0 0 1.6mm;
+    text-align: left;
+    break-after: avoid;
+}
+
+table.data {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "PT Sans";
+    font-size: 7.8pt;
+    line-height: 1.32;
+    color: #1d1a22;
+}
+
+table.data th {
+    background: #eee8f5;
+    color: #3c2a52;
+    font-weight: 700;
+    text-align: left;
+    border-top: 0.8pt solid #4a2c6d;
+    border-bottom: 0.5pt solid #b9a8cc;
+    padding: 1.4mm 1.5mm;
+    vertical-align: bottom;
+}
+
+table.data td {
+    border-bottom: 0.3pt solid #e4dcec;
+    padding: 1.2mm 1.5mm;
+    vertical-align: top;
+}
+
+table.data tbody tr:nth-child(even) td {
+    background: #faf8fc;
+}
+
+table.data:not(.text) th:not(:first-child),
+table.data:not(.text) td:not(:first-child) {
+    text-align: right;
+}
+
+table.data.text th:not(:first-child),
+table.data.text td:not(:first-child) {
+    text-align: left;
+}
+
+table.data.wide {
+    font-size: 7.1pt;
+}
+
+table.data.wide th,
+table.data.wide td {
+    padding: 1.1mm 1mm;
+}
+
+figure {
+    margin: 5mm 0 5.5mm;
+    break-inside: avoid;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    border: 0.4pt solid #ddd4e8;
+    border-radius: 1.5mm;
+}
+
+figcaption {
+    font-family: "PT Sans";
+    font-size: 8.1pt;
+    line-height: 1.38;
+    color: #5d5668;
+    margin-top: 1.8mm;
+    text-align: left;
+}
+
+figcaption b {
+    color: #4a2c6d;
+}
+
+.equation {
+    position: relative;
+    margin: 3.5mm 0 1mm;
+    padding: 3mm 12mm 3mm 3mm;
+    background: #faf8fc;
+    border-left: 2.5pt solid #8a6fb0;
+    break-inside: avoid;
+    text-align: center;
+}
+
+.equation img {
+    max-width: 100%;
+    height: auto;
+}
+
+.eqnum {
+    position: absolute;
+    right: 3.5mm;
+    top: 3mm;
+    font-family: "PT Sans";
+    font-size: 7.6pt;
+    color: #6b6474;
+}
+
+.eq-note {
+    font-family: "PT Sans";
+    font-size: 8pt;
+    line-height: 1.42;
+    color: #4f4858;
+    margin: 0 0 4mm;
+    padding-left: 4mm;
+    border-left: 0.4pt solid #e2d9ec;
+    text-align: left;
+}
+
+.pill {
+    display: inline-block;
+    padding: 0.5mm 1.8mm;
+    border-radius: 2mm;
+    font-family: "PT Sans";
+    font-size: 7pt;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pill.ok {
+    background: #e3f3e8;
+    color: #1f5b35;
+}
+
+.pill.no {
+    background: #f9e3e3;
+    color: #7a2424;
+}
+
+.pill.mid {
+    background: #fbf0d9;
+    color: #6b4a12;
+}
+
+.pill.info {
+    background: #e6eef9;
+    color: #23456f;
+}
+
+.pill.gray {
+    background: #eeecef;
+    color: #4a4550;
+}
+
+.status-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "PT Sans";
+    font-size: 7.7pt;
+    line-height: 1.34;
+    margin: 2mm 0 4mm;
+}
+
+.status-table th {
+    background: #eee8f5;
+    color: #3c2a52;
+    text-align: left;
+    border-top: 0.8pt solid #4a2c6d;
+    border-bottom: 0.5pt solid #b9a8cc;
+    padding: 1.5mm 1.4mm;
+}
+
+.status-table td {
+    border-bottom: 0.3pt solid #e4dcec;
+    padding: 1.3mm 1.4mm;
+    vertical-align: top;
+}
+
+.status-table tr:nth-child(even) td {
+    background: #faf8fc;
+}
+
+.prov {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "PT Sans";
+    font-size: 7.4pt;
+    line-height: 1.35;
+    margin: 2mm 0 3mm;
+}
+
+.prov th {
+    text-align: left;
+    background: #eee8f5;
+    border-top: 0.8pt solid #4a2c6d;
+    border-bottom: 0.5pt solid #b9a8cc;
+    padding: 1.3mm;
+}
+
+.prov td {
+    border-bottom: 0.3pt solid #e4dcec;
+    padding: 1.2mm 1.3mm;
+    vertical-align: top;
+}
+
+.prov td:first-child {
+    width: 23%;
+    font-weight: 700;
+    color: #3c2a52;
+}
+
+.mono {
+    font-family: "PT Mono";
+    font-size: 6.9pt;
+    overflow-wrap: anywhere;
+}
+
+.neg-list {
+    counter-reset: neg;
+    list-style: none;
+    padding-left: 0;
+    margin: 2mm 0 4mm;
+}
+
+.neg-list li {
+    counter-increment: neg;
+    position: relative;
+    padding-left: 12mm;
+    margin-bottom: 2.2mm;
+    text-align: left;
+}
+
+.neg-list li::before {
+    content: "N" counter(neg);
+    position: absolute;
+    left: 0;
+    top: 0.1mm;
+    font-family: "PT Sans";
+    font-size: 8pt;
+    font-weight: 700;
+    color: #a24b2a;
+}
+
+.neg-list b {
+    color: #7a3520;
+}
+
+.small {
+    font-size: 8.6pt;
+    color: #4f4858;
+}
+
+.muted {
+    color: #6b6474;
+}
+
+.center {
+    text-align: center;
+}
+
+.keep {
+    break-inside: avoid;
+}
+
+.page-break {
+    break-before: page;
+}
+
+sup,
+sub {
+    line-height: 0;
+}

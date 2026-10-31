@@ -289,7 +289,7 @@ pre-to-post перенос. классификатор обучен на natural
 
 post-only идентификация внутри маскированной области, обучение на окнах 6-7 и тест на 8-9:
 
-**таблица 9. within-subject switch.**
+**таблица 8. within-subject switch.**
 
 | группа | drift | pre-only logreg | pre-to-post rf | post-only logreg | post-only rf | post профилей |
 |---|---|---|---|---|---|---|
