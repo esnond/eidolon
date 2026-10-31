@@ -284,29 +284,33 @@ def toc_html(tokens: list[dict]) -> str:
 def cover_html() -> str:
     return """
 <section class="cover">
-  <div class="cover-top">
-    <div class="cover-mark">eidolon</div>
-    <div>исследовательский артефакт · ревизия 1</div>
-  </div>
-  <div class="cover-main">
-    <p class="cover-kicker">отчёт для научного руководителя</p>
-    <h1 class="cover-title">аномальность<br>без уникальности</h1>
-    <p class="cover-sub">детерминированная маскировка в синтетической когорте 600 пациентов: генератор, измерения, отрицательные результаты и границы воспроизводимости</p>
-    <div class="cover-rule"></div>
-    <table class="cover-stats">
-      <tr>
-        <td><div class="cover-num">600</div><div class="cover-label">виртуальных пациентов</div></td>
-        <td><div class="cover-num">90</div><div class="cover-label">дней наблюдения</div></td>
-        <td><div class="cover-num">1 991 067</div><div class="cover-label">событий</div></td>
-        <td><div class="cover-num">51</div><div class="cover-label">поведенческий признак</div></td>
-      </tr>
-    </table>
-  </div>
-  <div class="cover-foot">
-    <div><b>31 октября 2026</b> · проект eidolon · preprint draft, not peer reviewed</div>
-    <div>sha256 основной когорты: <span style="font-family:'PT Mono';font-size:6.8pt">7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></div>
-    <div>подготовлено при участии ии; декларация и границы воспроизводимости внутри</div>
-  </div>
+  <table class="cover-layout">
+    <tr><td class="cover-topcell">
+      <table class="cover-topline"><tr>
+        <td><span class="cover-mark">eidolon</span></td>
+        <td class="right">исследовательский артефакт · ревизия 1</td>
+      </tr></table>
+    </td></tr>
+    <tr><td class="cover-maincell">
+      <p class="cover-kicker">отчёт для научного руководителя</p>
+      <h1 class="cover-title">аномальность<br>без уникальности</h1>
+      <p class="cover-sub">детерминированная маскировка в синтетической когорте 600 пациентов: генератор, измерения, отрицательные результаты и границы воспроизводимости</p>
+      <div class="cover-rule"></div>
+      <table class="cover-stats">
+        <tr>
+          <td><div class="cover-num">600</div><div class="cover-label">виртуальных пациентов</div></td>
+          <td><div class="cover-num">90</div><div class="cover-label">дней наблюдения</div></td>
+          <td><div class="cover-num">1 991 067</div><div class="cover-label">событий</div></td>
+          <td><div class="cover-num">51</div><div class="cover-label">поведенческий признак</div></td>
+        </tr>
+      </table>
+    </td></tr>
+    <tr><td class="cover-footcell">
+      <div><b>31 октября 2026</b> · проект eidolon · preprint draft, not peer reviewed</div>
+      <div>sha256 основной когорты: <span style="font-family:'PT Mono';font-size:6.8pt">7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></div>
+      <div>подготовлено при участии ии; декларация и границы воспроизводимости внутри</div>
+    </td></tr>
+  </table>
 </section>
 """
 
