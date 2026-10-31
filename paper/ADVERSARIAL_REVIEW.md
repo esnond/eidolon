@@ -54,3 +54,15 @@ the draft is publishable as a synthetic methods and negative results paper after
 - hgb is underfit; h7 remains inconclusive.
 
 none of these is hidden in the draft. the author must decide whether to submit as a simulation paper or collect real data first.
+
+## pass 2 note, 2026-10-31
+
+re-reviewed `paper/DRAFT.md` after the second `/paper` run. changes checked: h5 post hoc power 0.354 and mde dz 0.285, h4 per-model bootstrap ci, g5 seed2, confirmatory versus exploratory table, main cohort wording, chance row and table captions.
+
+no new overclaim found. the underpowered h5 and the weak h4 are now explicit, g5 residual 15x chance is explicit, and the exploratory labels travel with every post hoc block. residual risks are unchanged: synthetic data, g3 construct, g5 determinism versus quantization, mask scalar concentration, partial seed coverage, no public doi and no external preregistration.
+
+## pass 3 note, 2026-10-31
+
+reviewed `paper/DRAFT_EN.md` against `paper/DRAFT.md` and the results files. the english draft keeps the same numbers, the same five honesty statuses, the same exploratory labels and the same limitations. no translation drift found: h2 is not described as equality, h5 is not described as refuted, rank-1 is not described as confirmed, and within-subject is described as transfer failure with post-only residual identification. the mechanical gate checks both files and passes.
+
+residual risks unchanged: synthetic data, g3 construct, g5 determinism versus quantization, mask scalar concentration, partial seed coverage, no public doi, no external preregistration, prior manuscript disclosure pending.

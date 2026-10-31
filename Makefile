@@ -53,6 +53,9 @@ test: sanitize
 test-python:
 	$(PY) -m unittest discover -s tests -v
 
+paper:
+	$(PY) tools/check_paper_claims.py
+
 check: $(BIN) | tmpdir
 	TMPDIR=$(CURDIR)/tmp_check sh tools/check_determinism.sh ./$(BIN) $(SEED) --against-published
 	TMPDIR=$(CURDIR)/tmp_check sh tools/check_g5.sh ./$(BIN) $(SEED)
@@ -95,4 +98,4 @@ tmpdir:
 	mkdir -p tmp_check
 
 FORCE:
-.PHONY: all clean test test-python sanitize check manifest analysis release tmpdir FORCE
+.PHONY: all clean test test-python sanitize check paper manifest analysis release tmpdir FORCE

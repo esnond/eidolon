@@ -139,3 +139,15 @@ changes applied in pass 2:
 - chance row added to the identification table.
 
 no changes to the keep/cut list from pass 1. no new overclaims found. the draft remains a simulation and negative results paper. the same human blockers remain: author metadata, public doi, prior manuscript disclosure, external preregistration for future analyses, and release regeneration after acceptance.
+
+## pass 3, 2026-10-31
+
+trigger: third `/paper` run. the user asked whether everything is translated into two languages and whether the defense passed, then invoked the workflow again. the agent provider block was not retried; stages executed directly.
+
+- prioritizer: keep/cut list unchanged. no new result block.
+- methodologist: the same required fixes apply. key numbers and honesty statuses were checked in both languages by `make paper`.
+- editor: full english draft written as `paper/DRAFT_EN.md`, sections abstract, methods, results, limitations, honesty check, reproduction commands. no russian claim was upgraded in translation.
+- adversary: translation drift review added to `paper/ADVERSARIAL_REVIEW.md`; no new overclaim found.
+- gate: `make paper` checks both drafts, 18 required numbers, 5 honesty statuses, forbidden punctuation and overclaim patterns. result `PAPER_GATE_PASS: 2 files, 18 numbers, 5 statuses`.
+- status: bilingual draft complete. english project site, native proofread, author metadata and public doi remain.
+
