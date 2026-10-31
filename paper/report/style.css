@@ -169,7 +169,7 @@ a {
 .cover {
     page: cover;
     height: 297mm;
-    padding: 0;
+    padding: 21mm 20mm 17mm;
     box-sizing: border-box;
     color: #f7f3fb;
     position: relative;
@@ -177,31 +177,44 @@ a {
     break-after: page;
 }
 
-.cover-top {
-    position: absolute;
-    top: 21mm;
-    left: 20mm;
-    right: 20mm;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+.cover-layout {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cover-layout td {
+    padding: 0;
+    vertical-align: top;
+}
+
+.cover-topcell {
+    height: 8mm;
     font-family: "PT Sans";
     font-size: 8pt;
     color: #c9b8e0;
 }
 
-.cover-main {
-    position: absolute;
-    top: 72mm;
-    left: 20mm;
-    right: 20mm;
+.cover-topline {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.cover-foot {
-    position: absolute;
-    bottom: 17mm;
-    left: 20mm;
-    right: 20mm;
+.cover-topline td {
+    padding: 0;
+}
+
+.cover-topline td.right {
+    text-align: right;
+}
+
+.cover-maincell {
+    height: 208mm;
+    vertical-align: middle;
+}
+
+.cover-footcell {
+    height: 40mm;
+    vertical-align: bottom;
     font-family: "PT Sans";
     font-size: 7.6pt;
     line-height: 1.6;
