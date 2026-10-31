@@ -633,9 +633,14 @@ figcaption b {
     color: #4a2c6d;
 }
 
+.eq-block {
+    margin: 3.5mm 0 1mm;
+    break-inside: avoid;
+}
+
 .equation {
     position: relative;
-    margin: 3.5mm 0 1mm;
+    margin: 0 0 1mm;
     padding: 3mm 12mm 3mm 3mm;
     background: #faf8fc;
     border-left: 2.5pt solid #8a6fb0;
@@ -662,7 +667,7 @@ figcaption b {
     font-size: 8pt;
     line-height: 1.42;
     color: #4f4858;
-    margin: 0 0 4mm;
+    margin: 0 0 1mm;
     padding-left: 4mm;
     border-left: 0.4pt solid #e2d9ec;
     text-align: left;

@@ -233,11 +233,13 @@ def equation_html(eqs: dict[str, str]) -> str:
     out = []
     for i, (key, note) in enumerate(EQ_NOTES, start=1):
         out.append(
+            '<div class="eq-block">'
             '<div class="equation">'
             f'<img src="{eqs[key]}" alt="формула {i}">'
             f'<span class="eqnum">({i})</span>'
             "</div>"
             f'<p class="eq-note">{html.escape(note)}</p>'
+            "</div>"
         )
     return "\n".join(out)
 
