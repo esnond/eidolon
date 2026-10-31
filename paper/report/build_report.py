@@ -78,7 +78,7 @@ FIG_CAPTIONS = {
     "8": "within-subject переключение g6 и g7. панель a показывает сдвиг профиля, панель b показывает идентификацию после переключения.",
 }
 
-TABLE_TEXT = {"1", "7", "9"}
+TABLE_TEXT = {"1", "7", "10"}
 
 TEX = {
     "rng": r"$x \leftarrow x \oplus (x \gg 12),\quad x \leftarrow x \oplus (x \ll 25),\quad x \leftarrow x \oplus (x \gg 27)$",
@@ -154,9 +154,9 @@ TABLES = [
     ("5", "прогноз next-day, accuracy = 1 - mae/mean."),
     ("6", "top 10 permutation importance для g1."),
     ("7", "вердикты h1..h7."),
-    ("7b", "open-set verification, auc и eer."),
     ("8", "within-subject switch."),
-    ("9", "артефакты и их содержание."),
+    ("9", "open-set verification, auc и eer."),
+    ("10", "артефакты и их содержание."),
 ]
 
 FIGURES = [
@@ -395,7 +395,7 @@ def provenance_html() -> str:
     <tr><td>тег</td><td><span class="mono">v1.3.0</span> на коммите <span class="mono">a13a256</span></td></tr>
     <tr><td>бинарник</td><td><span class="mono">sha256 04449ca1fe428c686a877a90c96026378add130da17b350b0c0ae86f312cc569</span></td></tr>
     <tr><td>когорта</td><td><span class="mono">sha256 7841bd667c35ee437eea9d1c58016990c081ed022d8f042389fb356b487ce1a9</span></td></tr>
-    <tr><td>манифест</td><td><span class="mono">results/manifest.txt</span>, 165 строк, сгенерирован 2026-10-31T00:54:26Z; <span class="mono">paper/report/</span> исключён как производная вёрстка</td></tr>
+    <tr><td>манифест</td><td><span class="mono">results/manifest.txt</span>, 165 строк, сгенерирован 2026-10-31T01:03:53Z; <span class="mono">paper/report/</span> исключён как производная вёрстка</td></tr>
     <tr><td>релиз</td><td><span class="mono">release/eidolon-v1.3.0.tar.gz</span>, <span class="mono">sha256 7127db326c2503de8057d1bf874917473a8e056ae8528acc23464dff8d12483d</span>; собран до файлов воркфлоу статьи, pdf в него не входит</td></tr>
     <tr><td>гейты</td><td><span class="mono">make check</span>: DETERMINISM_PASS, G5_ISOLATION_PASS; <span class="mono">make paper</span>: PAPER_GATE_PASS, 2 файла, 18 чисел, 5 статусов</td></tr>
   </table>
@@ -441,7 +441,7 @@ def colophon_html() -> str:
   <p>отчёт собран из <code>paper/preprint.md</code> без изменения чисел и вердиктов. добавлены титул, служебное резюме, статус утверждений, провенанс, список рисунков и таблиц, а также раздел 3.9 с формальными определениями, которых в препринте не было в явном виде.</p>
   <p>типографика: pt serif для основного текста, pt sans для заголовков и таблиц, pt mono для идентификаторов. шрифты распространяются по лицензии sil ofl 1.1, копии лицензий лежат в <code>paper/report/.cache/fonts/</code>. вёрстка: weasyprint 65.1, формулы: matplotlib mathtext, stix.</p>
   <p>лицензии артефакта: код mit, статья и синтетические данные cc by 4.0, см. <code>LICENSE</code>, <code>LICENSE-CC-BY-4.0</code>, <code>NOTICE</code>. исходные документы в <code>refs/</code> не распространяются.</p>
-  <p>дата сборки: 31 октября 2026. pdf sha256 записан рядом с файлом в <code>.sha256</code>. исходный коммит: <code>a307c68</code>.</p>
+  <p>дата сборки: 31 октября 2026. pdf sha256 записан рядом с файлом в <code>.sha256</code>. исходный коммит: <code>a307c68</code> плюс рабочее дерево, см. провенанс.</p>
   <div class="callout">
     <div class="callout-title">как читать отчёт</div>
     <p>разделы 1-3 описывают постановку, генератор и метрики. раздел 4 содержит все результаты и вердикты. разделы 5-7 обсуждают механизм, ограничения и практический вывод. служебная часть в начале предназначена для быстрой проверки: резюме, статус утверждений, провенанс и границы.</p>
@@ -462,7 +462,7 @@ def add_appendix_table_caption(text: str) -> str:
     marker = "## приложение b. артефакты\n\n| файл | содержание |"
     replacement = (
         "## приложение b. артефакты\n\n"
-        "**таблица 9. артефакты и их содержание.**\n\n"
+        "**таблица 10. артефакты и их содержание.**\n\n"
         "| файл | содержание |"
     )
     if marker not in text:
@@ -547,7 +547,7 @@ def wrap_tables(body: str) -> str:
 
 
 def fix_csv_contract(body: str) -> str:
-    pattern = re.compile(r"<code>(patient_id,group,.*?)</code>", re.S)
+    pattern = re.compile(r"<code>(patient_id,group,.*?)</code>\.?", re.S)
 
     def repl(match: re.Match) -> str:
         text = match.group(1).replace(",", ",<wbr>")
@@ -562,6 +562,7 @@ def build_html() -> tuple[str, str]:
 
     text = PREPRINT.read_text(encoding="utf-8")
     text = strip_front_matter(text)
+    text = text.replace("/home/esnond/proteus/paper/FINAL.md", "github.com/esnond/proteus, paper/FINAL.md")
     text = add_appendix_table_caption(text)
     text = insert_equations(text, eqs)
     body, toc_tokens = convert_markdown(text)

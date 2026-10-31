@@ -73,8 +73,8 @@ code {
     font-family: "PT Mono";
     font-size: 8.3pt;
     background: #f2eef7;
-    padding: 0.1mm 0.9mm;
-    border-radius: 1mm;
+    padding: 0.1mm 0.35mm;
+    border-radius: 0.8mm;
     overflow-wrap: break-word;
 }
 
@@ -261,10 +261,10 @@ a {
 
 .cover-sub {
     font-family: "PT Sans";
-    font-size: 12.5pt;
+    font-size: 12pt;
     line-height: 1.42;
     color: #e2d6f1;
-    max-width: 145mm;
+    max-width: 162mm;
     margin: 0 0 10mm;
 }
 

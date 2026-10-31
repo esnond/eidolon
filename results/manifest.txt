@@ -1,5 +1,5 @@
 # eidolon reproducibility manifest
-# generated: 2026-10-31T00:54:26Z
+# generated: 2026-10-31T01:03:53Z
 # version: 1.3.0
 # binary: eidolon_gen
 # binary_sha256: 04449ca1fe428c686a877a90c96026378add130da17b350b0c0ae86f312cc569
@@ -37,7 +37,7 @@ a651f645a232528196e036feebefbabd9032f8792ccc5f10950a015addc0e080  paper/deviatio
 4e3449fb2bcf73ff63cb2523d7d386a960b371a71c8a6651a2c4afb82370e489  paper/DRAFT_EN.md
 99dc16e98f750abeee9e5c47e4060b25f09480afa4916b6aaa312827e5e82e0c  paper/DRAFT.md
 61510f9b9cbb2d4cd8e3a315d959a5e5bee59717cfc957351d7b392514e3cdb1  paper/paper_preparation.md
-f14a3b0ee2c84dda111085a256abefdadfc40c1bb2623ed2aa64f37417875aeb  paper/preprint.md
+96c83d91dd57607ce5026a47a97a0a60e859b4ad0565ab1bc3ca59a054f2c36e  paper/preprint.md
 a6c417c6bee83c22ec3180cde702c23bb94d9559ac65c816677c6f4360dae40e  paper/TRANSLATION_STATUS.md
 692f65145d5cfdc7078a9d70ce704e39679c36873f1dff22bf6ad62c9467a305  paper/WORKFLOW.md
 52b76d34472036ef2b4e5eef4facdc68d132b4fa771859a174cc8d2e9c2b0a5a  python/eidolon_corrections.py
